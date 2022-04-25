@@ -6,12 +6,13 @@ const userSchema = new Schema(
     username: { type: String, required: true },
     email: { type: String, unique: true, required: true },
     password: { type: String, required: true },
-    telephone: { type: Number },
+    telephone: { type: String },
     roles: {
       type: String,
-      enum: ["Admin", "Usuario"],
+      enum: ["Admin", "User"],
+      default: 'User'
     },
-    comment: String,
+    fact: String,
 
   },
 

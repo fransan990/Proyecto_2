@@ -4,27 +4,33 @@ const { Schema, model } = require("mongoose");
 const recipeSchema = new Schema(
     {
         name: String,
-        imagen: String,
-        User: [{
+        image: String,
+        owner: {
             type: Schema.Types.ObjectId,
-            ref: 'User'                             // Nombre del modelo referenciado
-        }],
+            ref: 'User'
+        },
         category: String,
         ingredients: [{
             type: Schema.Types.ObjectId,
-            ref: 'ingredients'                             // Nombre del modelo referenciado
+            ref: 'ingredients'
         }],
-        preparation: [{
-            type: Schema.Types.ObjectId,
-            ref: 'preparation'                             // Nombre del modelo referenciado
-        }],
-        location: {
-            type: {
-                type: String
-            },
-            coordinates: [Number]
+        preparation: [String],
+        restaurant: {
+            name: String,
+            location: {
+                type: {
+                    type: String
+                },
+                coordinates: [Number]
+            }
         },
-        comment: String,
+        comments: [{
+            owner: {
+                type: Schema.Types.ObjectId,
+                ref: 'User'
+            },
+            comment: String
+        }],
     },
 
 
