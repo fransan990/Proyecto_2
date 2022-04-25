@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-
 const userSchema = new Schema(
   {
     username: { type: String, required: true },
@@ -12,10 +11,7 @@ const userSchema = new Schema(
       enum: ["Admin", "User"],
       default: 'User'
     },
-    fact: String,
-
   },
-
   {
     timestamps: true
   }
