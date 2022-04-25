@@ -28,8 +28,8 @@ app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 const index = require("./routes/index.routes");
 app.use("/", index);
 
-// const ingredient = require("./routes/ingredient.routes");
-// app.use("/ingredient", ingredient);
+const ingredient = require("./routes/ingredient.routes");
+app.use("/ingredient", ingredient);
 
 // const recipe = require("./routes/recipe.routes");
 // app.use("/recipe", recipe);

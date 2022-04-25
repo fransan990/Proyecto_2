@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Ingredient</h2>
+
+    <hr>
+
+    <ul>
+        {{#each ingredients}}
+        <li class="ingredients-row">
+            <h3>{{name}}</h3>
+            <a href="/ingredient/{{id}}/edit" class="btn btn-dark">Edit</a>
+
+            <form action="/ingredient/{{id}}/delete" method="POST">
+                <button class="btn btn-sm btn-warning" type="submit">Delete</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+    <a href="/" class="btn btn-dark">Home</a>
+</div>
