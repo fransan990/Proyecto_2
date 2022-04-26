@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const Ingredient = require('../models/ingredient.model')
+const Ingredient = require('../models/Ingredient.model')
 
 
 //Create

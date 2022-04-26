@@ -10,11 +10,11 @@ const recipeSchema = new Schema(
             ref: 'User'
         },
         category: String,
-        ingredient: [{
+        ingredients: [{
             type: Schema.Types.ObjectId,
-            ref: 'ingredients'
+            ref: 'Ingredient'
         }],
-        preparation: [String],
+        preparation: String,
         restaurant: {
             name: String,
             location: {

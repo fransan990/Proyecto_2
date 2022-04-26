@@ -33,8 +33,8 @@ app.use("/", index);
 const ingredient = require("./routes/ingredient.routes");
 app.use("/ingredient", ingredient);
 
-// const recipe = require("./routes/recipe.routes");
-// app.use("/recipe", recipe);
+const recipe = require("./routes/recipe.routes");
+app.use("/recipe", recipe);
 
 const user = require("./routes/user.routes");
 app.use("/user", user);
