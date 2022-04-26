@@ -66,10 +66,10 @@ router.post('/:id/delete', (req, res) => {
 
     Ingredient
         .findByIdAndDelete(id)
-        - then(() => {
+        .then(() => {
             res.redirect('/ingredient/list')
         })
-            .catch(err => console.log(err))
+        .catch(err => console.log(err))
 })
 
 

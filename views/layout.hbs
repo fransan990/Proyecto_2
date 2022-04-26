@@ -15,26 +15,37 @@
 
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-         <a class="navbar-brand" href="#">Navbar w/ text</a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+         <a class="navbar-brand" href="#">Navbar</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
          </button>
-         <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
                <li class="nav-item">
-                  <a class="nav-link" href="/user/registro">Registro</a>
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="/user/inicio-sesion">Iniciar sesión</a>
+                  <a class="nav-link" href="/user/inicio-sesion">Login</a>
                </li>
                <li class="nav-item">
-                  {{!-- <a class="nav-link" href="user/inicio-sesion">Iniciar sesión</a> --}}
+                  <a class="nav-link" href="/user/registro">Sign Up</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="/ingredient/list">Recipe</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button"
+                     data-bs-toggle="dropdown" aria-expanded="false">
+                     User
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <li><a class="dropdown-item" href="/Recipe/createRecipe">Create Recipe</a></li>
+                     <li><a class="dropdown-item" href="/Recipe/editRecipe">Edit Recipe</a></li>
+                     <li><a class="dropdown-item" href="/user/inicio-sesion">Edit User</a></li>
+                  </ul>
                </li>
             </ul>
-            <span class="navbar-text">
-               Navbar text with an inline element
-            </span>
          </div>
       </div>
    </nav>
