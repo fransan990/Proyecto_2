@@ -32,7 +32,6 @@ const recipeSchema = new Schema(
         }],
     },
 
-
     {
         timestamps: true
     }

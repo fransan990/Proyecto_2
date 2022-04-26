@@ -9,6 +9,7 @@ router.get('/create', (req, res) => {
 })
 
 router.post('/create', (req, res) => {
+
     const { name, kcal, protein, fat, carbs } = req.body
 
     Ingredient
@@ -20,7 +21,6 @@ router.post('/create', (req, res) => {
             console.log(err)
             res.render('ingredient/createIngredient')
         })
-
 })
 
 //list 
@@ -39,6 +39,7 @@ router.get('/list', (req, res) => {
 //edit
 
 router.get('/:id/edit', (req, res) => {
+
     const { id } = req.params
 
     Ingredient
@@ -50,6 +51,7 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.post('/:id/edit', (req, res) => {
+
     const { id } = req.params
     const { name, kcal, protein, fat, carbs } = req.body
 
@@ -62,21 +64,16 @@ router.post('/:id/edit', (req, res) => {
 })
 
 router.post('/:id/delete', (req, res) => {
+
     const { id } = req.params
 
     Ingredient
         .findByIdAndDelete(id)
-        - then(() => {
+        .then(() => {
             res.redirect('/ingredient/list')
         })
-            .catch(err => console.log(err))
+        .catch(err => console.log(err))
 })
-
-
-
-
-
-
 
 
 module.exports = router
