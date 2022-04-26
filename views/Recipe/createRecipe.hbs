@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row justify-content">
+
+
+
+        <div class="cold-md-6">
+            <h2>New Recipe</h2>
+            <hr>
+
+            <form action="/recipe/create" method="POST">
+
+                <div class="m-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="m-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="text" class="form-control" id="image" name="image">
+                </div>
+                <div class="m-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="category" name="category">
+                </div>
+                <div class="m-3">
+                    <label for="ingredients" class="form-label">Ingredient</label>
+                    <select type="text" class="form-control" id="ingredient" name="ingredients">
+                        <option selected>Open this select menu</option>
+                        {{#each ingredient}}
+                        <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="m-3">
+                    <label for="preparation" class="form-label">Preparation</label>
+                    <input type="text" class="form-control" id="preparation" name="preparation">
+                </div>
+                <div class="m-3">
+                    <label for="restaurant" class="form-label">Restaurant</label>
+                    <input type="text" class="form-control" id="restaurant" name="restaurant">
+                    <input type="text" class="form-control" name="latitude" placeholder="latitud">
+                    <input type="text" class="form-control" name="longitud" placeholder="longitud">
+
+                </div>
+
+                <button type="submit" class="btn btn-dark">Enter</button>
+                <a href="/" class="btn btn-dark">Home</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
