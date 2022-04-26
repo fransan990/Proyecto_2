@@ -25,10 +25,8 @@ const recipeSchema = new Schema(
             }
         },
         comments: [{
-            owner: {
-                type: Schema.Types.ObjectId,
-                ref: 'User'
-            },
+            type: Schema.Types.ObjectId,
+            ref: 'Comment'
         }],
     },
 

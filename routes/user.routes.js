@@ -7,7 +7,6 @@ const saltRounds = 10
 const { isLoggedOut } = require('./../middleware/route-guard')
 
 
-/* GET home page */
 router.get('/registro', (req, res, next) => {
     res.render('user/signup')
 
@@ -25,15 +24,12 @@ router.post('/registro', (req, res, next) => {
         .then(hashedPassword => User.create({ username, password: hashedPassword, email, telephone }))
         .then(() => res.redirect('/'))
         .catch(error => next(error))
-
 })
-
 
 router.get('/inicio-sesion', isLoggedOut, (req, res) => {
     res.render('user/login')
     // res.send("login")
 })
-
 
 router.post('/inicio-sesion', isLoggedOut, (req, res, next) => {
 
@@ -56,10 +52,14 @@ router.post('/inicio-sesion', isLoggedOut, (req, res, next) => {
                 return
             }
 
-            req.session.currentUser = user          // <= THIS means logging in a user
+            req.session.currentUser = user
             res.redirect('/')
         })
         .catch(error => next(error));
+})
+
+router.post('/cerrar-sesion', (req, res, next) => {
+    req.session.destroy(() => res.redirect('/user/inicio-sesion'))
 })
 
 
