@@ -3,7 +3,8 @@ const router = require("express").Router();
 const User = require('../models/User.model')
 const Comment = require('../models/Comment.model')
 const Recipe = require('../models/Recipe.model')
-const Ingredient = require('../models/Ingredient.model')
+const Ingredient = require('../models/Ingredient.model');
+
 
 
 
@@ -63,7 +64,7 @@ router.post('/create', (req, res) => {
     const { name, image, owner, category, ingredients, preparation, restaurant } = req.body
 
     Recipe
-        .create({ name, image, owner, category, ingredients, preparation, restaurant, owner: _id })
+        .create({ name, image, owner: _id, category, ingredients, preparation, restaurant })
         .then(() => {
             res.redirect('/Recipe/listRecipe')
         })
@@ -86,7 +87,73 @@ router.get('/listRecipe', (req, res) => {
 })
 
 
+//edit recipe
 
+router.get('/:id/edit', (req, res) => {
+    const { id } = req.params
+
+    // res.send('holaaa')
+
+    Recipe
+        .findById(id)
+        .populate('ingredients')
+        .then(newRecipe => {
+            res.render('recipe/editRecipe', newRecipe)
+
+        })
+        .catch(err => console.log(err))
+})
+
+router.post('/:id/edit', (req, res) => {
+
+    // res.send('holaaa')
+    const { id } = req.params
+    const { name, image, owner: _id, category, ingredients, preparation, restaurant } = req.body
+
+    console.log(req.body)
+
+    Recipe
+        .findByIdAndUpdate(id, { name, image, owner: _id, category, ingredients, preparation, restaurant })
+        .then(() => {
+            res.redirect('/Recipe/listRecipe')
+        })
+        .catch(err => console.log(err))
+})
+
+
+//delete recipe
+router.get('/:id/delete', (req, res) => {
+    res.send('jolaaa')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //delete recipe
+
+// router.get('/:id/delete', (req, res) => {
+//     const { _id } = req.params
+
+
+//     Recipe
+//         .findByIdAndDelete(_id)
+//         .then(() => {
+//             res.redirect('Recipe/listRecipe')
+//         })
+//         .catch(err => console.log(err))
+// })
 
 
 
