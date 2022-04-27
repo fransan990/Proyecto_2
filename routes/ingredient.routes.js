@@ -16,26 +16,23 @@ router.post('/create', (req, res) => {
             res.redirect('/ingredient/list')
         })
         .catch(err => {
-            console.log(err)
             res.render('ingredient/createIngredient')
         })
 })
 
 //list 
+router.get('/list', (req, res) => {
 
-// router.get('/list', (req, res) => {
-
-//     Ingredient
-//         .find()
-//         .then(ingredients => {
-//             res.render('recipe/listRecipe', { ingredients })
-//         })
-//         .catch(err => console.log(err))
-// })
+    Ingredient
+        .find()
+        .then(ingredients => {
+            res.render('recipe/listRecipe', { ingredients })
+        })
+        .catch(err => console.log(err))
+})
 
 
 //edit
-
 router.get('/:id/edit', (req, res) => {
 
     const { id } = req.params
@@ -61,6 +58,7 @@ router.post('/:id/edit', (req, res) => {
         .catch(err => console.log(err))
 })
 
+//Delete
 router.post('/:id/delete', (req, res) => {
 
     const { id } = req.params

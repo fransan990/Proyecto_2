@@ -17,9 +17,11 @@ router.get("/:id/details", (req, res, next) => {
     const { _id } = req.session.currentUser;
     const { id } = req.params;
 
-    //lo puto mejor que tenemos gracias INES <3
-
-    const promises = [User.findById(_id), Comment.find({ recipe: id }).populate("owner"), Recipe.findById(id)]
+    const promises = [
+        User.findById(_id),
+        Comment.find({ recipe: id }).populate("owner"),
+        Recipe.findById(id)
+    ]
 
     Promise
         .all(promises)
@@ -27,9 +29,11 @@ router.get("/:id/details", (req, res, next) => {
             console.log(recipe)
             res.render('recipe/detailsRecipe', { user, comments, recipe })
         })
-        .catch(err => console.log(err))
+        .catch(error => next(error))
 
 });
+
+//Comment
 
 router.post("/:id/details", (req, res, next) => {
     // res.send(req.body)
@@ -43,11 +47,11 @@ router.post("/:id/details", (req, res, next) => {
         .then(() => {
             res.redirect(`/recipe/${id}/details`)
         })
-        .catch(err => console.log(err))
+        .catch(error => next(error))
 
 });
 
-// create recipe
+// create recipe | ingredient
 
 router.get('/create', (req, res) => {
 
@@ -56,25 +60,22 @@ router.get('/create', (req, res) => {
         .then(ingredient => {
             res.render('Recipe/createRecipe', { ingredient })
         })
-        .catch(err => console.log(err))
+        .catch(error => next(error))
 })
+
 
 router.post('/create', fileUploader.single('image'), (req, res) => {
 
     const { _id } = req.session.currentUser
     const { name, owner, category, ingredients, preparation, restaurant } = req.body
     const { path } = req.file
-    console.log(req.file)
-    console.log(req)
-    console.log(path)
+
     Recipe
         .create({ name, image: path, owner: _id, category, ingredients, preparation, restaurant, })
         .then(() => {
             res.redirect('/Recipe/listRecipe')
         })
-        .catch(err => {
-            console.log(err)
-        })
+        .catch(error => next(error))
 })
 
 //recipe list
@@ -87,16 +88,15 @@ router.get('/listRecipe', (req, res) => {
         .then(recipe => {
             res.render('recipe/listRecipe', { recipe })
         })
-        .catch(err => console.log(err))
+        .catch(error => next(error))
 })
 
 
 //edit recipe
 
 router.get('/:id/edit', (req, res) => {
-    const { id } = req.params
-
     // res.send('holaaa')
+    const { id } = req.params
 
     Recipe
         .findById(id)
@@ -105,7 +105,7 @@ router.get('/:id/edit', (req, res) => {
             res.render('recipe/editRecipe', newRecipe)
 
         })
-        .catch(err => console.log(err))
+        .catch(error => next(error))
 })
 
 router.post('/:id/edit', (req, res) => {
@@ -121,30 +121,20 @@ router.post('/:id/edit', (req, res) => {
         .then(() => {
             res.redirect('/Recipe/listRecipe')
         })
-        .catch(err => console.log(err))
+        .catch(error => next(error))
 })
-
-
-//delete recipe
-router.get('/:id/delete', (req, res) => {
-    res.send('jolaaa')
-})
-
 // //delete recipe
 
-// router.get('/:id/delete', (req, res) => {
-//     const { _id } = req.params
+router.get('/:id/delete', (req, res) => {
+    const { _id } = req.params
 
 
-//     Recipe
-//         .findByIdAndDelete(_id)
-//         .then(() => {
-//             res.redirect('Recipe/listRecipe')
-//         })
-//         .catch(err => console.log(err))
-// })
-
-
-
+    Recipe
+        .findByIdAndDelete(_id)
+        .then(() => {
+            res.redirect('Recipe/listRecipe')
+        })
+        .catch(error => next(error))
+})
 
 module.exports = router;

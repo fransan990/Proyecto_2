@@ -35,8 +35,18 @@
                     <input type="text" class="form-control" id="restaurant" name="restaurant">
                     <input type="text" class="form-control" name="latitude" placeholder="latitud">
                     <input type="text" class="form-control" name="longitud" placeholder="longitud">
-
                 </div>
+
+
+                <figure class="restuarantsMap"></figure>
+
+                {{!-- <a href="/api/places" target="_blank">Mira la API!</a> --}}
+
+
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                <script src="/js/recipeCreateMap.js"></script>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjOt5lgJiMo2s0X3EMAguiuDo52zdXYrY&callback=recipeCreateMap"></script>
 
                 <button type="submit" class="btn btn-dark">Enter</button>
                 <a href="/" class="btn btn-dark">Home</a>

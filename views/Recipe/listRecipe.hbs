@@ -1,37 +1,29 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <ul>
-                {{#each recipe}}
 
+            {{#each recipe}}
+
+            <div class="col-12 mb-3">
                 <a href="/recipe/{{id}}/details">{{name}}</a>
 
+            </div>
 
-                <h3>{{name}}</h3>
-                <img src="{{image}}" alt="">
-                <a href="/ingredient/{{id}}/edit" class="btn btn-dark">Edit</a>
-                <ul>
-                    {{#each recipe}}
-                    <li class="row">
-                        <h3>{{name}}</h3>
-                        <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
+            <ul>
+                <li>
+                    <img src="{{image}}" alt="">
 
-                        <form action="/recipe/{{id}}/delete" method="POST">
-                            <button class="btn btn-sm btn-warning" type="submit">Delete</button>
-                        </form>
+                    <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
 
-
-                    </li>
-                    {{/each}}
-                </ul>
-                <a href="/" class="btn btn-dark">Home</a>
-
-                <form action="/ingredient/{{id}}/delete" method="POST">
-                    <button class="btn btn-sm btn-warning" type="submit">Delete</button>
-                </form>
-
-                {{/each}}
+                    <form action="/recipe/{{id}}/delete" method="POST">
+                        <button class="btn btn-warning" type="submit">Delete</button>
+                    </form>
+                </li>
             </ul>
+            <a href="/" class="btn btn-dark">Home</a>
+
+            {{/each}}
+
         </div>
     </div>
 </div>

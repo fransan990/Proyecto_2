@@ -65,3 +65,8 @@ footer .social-icons {
   -webkit-transform: scale(1.2);
   -o-transform: scale(1.2);
 }
+
+.restuarantsMap {
+  height: 600px;
+  background-color: red;
+}
