@@ -5,45 +5,46 @@ const Comment = require('../models/Comment.model')
 const Recipe = require('../models/Recipe.model')
 const Ingredient = require('../models/Ingredient.model')
 
+const fileUploader = require("../config/cloudinary.config")
 
 
-
-router.get("/details", (req, res, next) => {
+router.get("/:id/details", (req, res, next) => {
     // res.send("detalles")
-
     //id para los comentarios
-
     // res.send(req.session.currentUser._id)
-    const { _id } = req.session.currentUser;
 
-    const promises = [User.findById(_id), Comment.find().populate("owner")]
+    const { _id } = req.session.currentUser;
+    const { id } = req.params;
+
+    //lo puto mejor que tenemos gracias INES <3
+
+    const promises = [User.findById(_id), Comment.find({ recipe: id }).populate("owner"), Recipe.findById(id)]
 
     Promise
         .all(promises)
-        .then(([user, comments]) => {
-            res.render('recipe/detailsRecipe', { user, comments })
+        .then(([user, comments, recipe]) => {
+            console.log(recipe)
+            res.render('recipe/detailsRecipe', { user, comments, recipe })
         })
         .catch(err => console.log(err))
 
 });
 
-router.post("/details", (req, res, next) => {
+router.post("/:id/details", (req, res, next) => {
     // res.send(req.body)
     // res.send(req.session.currentUser._id)
     const { _id } = req.session.currentUser;
     const { description } = req.body
+    const { id } = req.params
 
     Comment
-        .create({ owner: _id, description })
+        .create({ owner: _id, recipe: id, description })
         .then(() => {
-            res.redirect(`/recipe/details`)
+            res.redirect(`/recipe/${id}/details`)
         })
         .catch(err => console.log(err))
 
 });
-
-
-
 
 // create recipe
 
@@ -57,13 +58,16 @@ router.get('/create', (req, res) => {
         .catch(err => console.log(err))
 })
 
-router.post('/create', (req, res) => {
+router.post('/create', fileUploader.single('image'), (req, res) => {
 
     const { _id } = req.session.currentUser
-    const { name, image, owner, category, ingredients, preparation, restaurant } = req.body
-
+    const { name, owner, category, ingredients, preparation, restaurant } = req.body
+    const { path } = req.file
+    console.log(req.file)
+    console.log(req)
+    console.log(path)
     Recipe
-        .create({ name, image, owner, category, ingredients, preparation, restaurant, owner: _id })
+        .create({ name, image: path, owner: _id, category, ingredients, preparation, restaurant, })
         .then(() => {
             res.redirect('/Recipe/listRecipe')
         })
@@ -80,15 +84,10 @@ router.get('/listRecipe', (req, res) => {
     Recipe
         .find()
         .then(recipe => {
-            res.render('Recipe/listRecipe', { recipe })
+            res.render('recipe/listRecipe', { recipe })
         })
         .catch(err => console.log(err))
 })
-
-
-
-
-
 
 
 module.exports = router;

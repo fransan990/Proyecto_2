@@ -10,11 +10,9 @@ const checkRole = (...rolesToCheck) => (req, res, next) => {
     }
 }
 
-
 const isLoggedOut = (req, res, next) => {
     req.session.currentUser ? res.redirect('/') : next()
 }
-
 
 module.exports = { isLoggedIn, isLoggedOut, checkRole }
 

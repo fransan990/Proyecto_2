@@ -1,9 +1,17 @@
 <div class="container">
+
+
+
+    <p>{{recipe.name}}</p>
+
+
+
+
     <div class="row justify-content-center">
         <div class="col-md-5 mt-5">
             <h1>Crear Comentario {{user.username}}</h1>
             <hr>
-            <form action="/recipe/details" method="POST">
+            <form action="/recipe/{{recipe.id}}/details" method="POST">
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Comentario</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
@@ -12,6 +20,8 @@
 
                 <button type="submit" class="btn btn-dark">Guardar comentario</button>
             </form>
+
+
         </div>
     </div>
 

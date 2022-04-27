@@ -1,9 +1,7 @@
 const router = require("express").Router()
 const Ingredient = require('../models/Ingredient.model')
 
-
 //Create
-
 router.get('/create', (req, res) => {
     res.render('ingredient/createIngredient')
 })
@@ -25,15 +23,15 @@ router.post('/create', (req, res) => {
 
 //list 
 
-router.get('/list', (req, res) => {
+// router.get('/list', (req, res) => {
 
-    Ingredient
-        .find()
-        .then(ingredients => {
-            res.render('recipe/listRecipe', { ingredients })
-        })
-        .catch(err => console.log(err))
-})
+//     Ingredient
+//         .find()
+//         .then(ingredients => {
+//             res.render('recipe/listRecipe', { ingredients })
+//         })
+//         .catch(err => console.log(err))
+// })
 
 
 //edit

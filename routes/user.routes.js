@@ -39,6 +39,7 @@ router.post('/inicio-sesion', isLoggedOut, (req, res, next) => {
         res.render('user/login', { errorMessage: 'Rellena todos los campos' })
         return
     }
+
     User
         .findOne({ username })
         .then(user => {

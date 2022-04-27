@@ -3,7 +3,6 @@ body {
   font-weight: 300;
 }
 
-/* 
 footer {
   background-color: #212429;
   color: white;
@@ -15,11 +14,7 @@ footer {
   bottom: 0;
 }
 
-
-footer
-
-
-.social-icons {
+footer .social-icons {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none
@@ -69,4 +64,4 @@ footer
   -moz-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   -o-transform: scale(1.2);
-} */
+}
