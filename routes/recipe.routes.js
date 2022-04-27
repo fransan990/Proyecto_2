@@ -31,6 +31,10 @@ router.get("/:id/details", (req, res, next) => {
 
 });
 
+
+//create comment
+
+
 router.post("/:id/details", (req, res, next) => {
     // res.send(req.body)
     // res.send(req.session.currentUser._id)
@@ -67,6 +71,7 @@ router.post('/create', fileUploader.single('image'), (req, res) => {
     console.log(req.file)
     console.log(req)
     console.log(path)
+
     Recipe
         .create({ name, image: path, owner: _id, category, ingredients, preparation, restaurant, })
         .then(() => {
@@ -126,23 +131,19 @@ router.post('/:id/edit', (req, res) => {
 
 
 //delete recipe
-router.get('/:id/delete', (req, res) => {
-    res.send('jolaaa')
+
+router.post('/:id/delete', (req, res) => {
+
+    const { id } = req.params
+
+    Recipe
+        .findByIdAndDelete(id)
+        .then(() => {
+            res.redirect('/Recipe/listRecipe')
+        })
+        .catch(err => console.log(err))
 })
 
-// //delete recipe
-
-// router.get('/:id/delete', (req, res) => {
-//     const { _id } = req.params
-
-
-//     Recipe
-//         .findByIdAndDelete(_id)
-//         .then(() => {
-//             res.redirect('Recipe/listRecipe')
-//         })
-//         .catch(err => console.log(err))
-// })
 
 
 

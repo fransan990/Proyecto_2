@@ -7,7 +7,6 @@ router.get('/create', (req, res) => {
 })
 
 router.post('/create', (req, res) => {
-
     const { name, kcal, protein, fat, carbs } = req.body
 
     Ingredient
@@ -37,7 +36,6 @@ router.post('/create', (req, res) => {
 //edit
 
 router.get('/:id/edit', (req, res) => {
-
     const { id } = req.params
 
     Ingredient
@@ -49,7 +47,6 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.post('/:id/edit', (req, res) => {
-
     const { id } = req.params
     const { name, kcal, protein, fat, carbs } = req.body
 
@@ -62,7 +59,6 @@ router.post('/:id/edit', (req, res) => {
 })
 
 router.post('/:id/delete', (req, res) => {
-
     const { id } = req.params
 
     Ingredient

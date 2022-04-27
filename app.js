@@ -39,6 +39,8 @@ app.use("/recipe", recipe);
 const user = require("./routes/user.routes");
 app.use("/user", user);
 
+const comment = require("./routes/comment.routes")
+app.use("/comment", comment)
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes

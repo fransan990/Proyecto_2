@@ -5,13 +5,8 @@
                 {{#each recipe}}
 
                 <a href="/recipe/{{id}}/details">{{name}}</a>
-
-
-                <h3>{{name}}</h3>
                 <img src="{{image}}" alt="">
-                <a href="/ingredient/{{id}}/edit" class="btn btn-dark">Edit</a>
                 <ul>
-                    {{#each recipe}}
                     <li class="row">
                         <h3>{{name}}</h3>
                         <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
@@ -20,17 +15,10 @@
                             <button class="btn btn-sm btn-warning" type="submit">Delete</button>
                         </form>
 
-
                     </li>
                     {{/each}}
                 </ul>
                 <a href="/" class="btn btn-dark">Home</a>
-
-                <form action="/ingredient/{{id}}/delete" method="POST">
-                    <button class="btn btn-sm btn-warning" type="submit">Delete</button>
-                </form>
-
-                {{/each}}
             </ul>
         </div>
     </div>
