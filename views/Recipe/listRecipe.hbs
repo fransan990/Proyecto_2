@@ -6,24 +6,23 @@
 
             <div class="col-12 mb-3">
                 <a href="/recipe/{{id}}/details">{{name}}</a>
+                <img src="{{image}}" alt="">
+                <ul>
+                    <li class="row">
+                        <h3>{{name}}</h3>
+                        <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
+
+                        <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
+
+                    </li>
+
+                </ul>
+                <a href="/" class="btn btn-dark">Home</a>
+                </ul>
+                <a href="/" class="btn btn-dark">Home</a>
+
+                {{/each}}
 
             </div>
-
-            <ul>
-                <li>
-                    <img src="{{image}}" alt="">
-
-                    <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
-
-                    <form action="/recipe/{{id}}/delete" method="POST">
-                        <button class="btn btn-warning" type="submit">Delete</button>
-                    </form>
-                </li>
-            </ul>
-            <a href="/" class="btn btn-dark">Home</a>
-
-            {{/each}}
-
         </div>
     </div>
-</div>

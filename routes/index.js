@@ -10,4 +10,7 @@ module.exports = app => {
 
     const user = require("./user.routes");
     app.use("/user", user);
+
+    const comment = require("./comment.routes");
+    app.use("/comment", comment);
 }

@@ -11,19 +11,24 @@
 
     <div class="row justify-content-center">
         <div class="col-md-5 mt-5">
-            <h1>Crear Comentario {{user.username}}</h1>
+            <h1>Create Comment {{user.username}}</h1>
             <hr>
             <form action="/recipe/{{recipe.id}}/details" method="POST">
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Comentario</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                         name="description"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-dark">Guardar comentario</button>
+                <div>
+                    const like =
+                </div>
+                <button type="submit" class="btn btn-dark">Save Comment</button>
+
             </form>
         </div>
     </div>
+
 
     {{!-- {{#each user}}
 
@@ -32,6 +37,13 @@
     {{#each comments}}
     <p>{{owner.username}}</p>
     <p>{{description}}</p>
+
+
+    <a href="/comment/{{id}}/edit" class="btn btn-dark">Edit</a>
+    <form action="/comment/{{id}}/delete" method="POST">
+        <button class="btn btn-sm btn-warning" type="submit">Delete</button>
+    </form>
+
     {{/each}}
 
 
