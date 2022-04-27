@@ -3,7 +3,6 @@ const bcrypt = require('bcryptjs')
 const User = require("../models/User.model")
 const saltRounds = 10
 
-
 const { isLoggedOut } = require('./../middleware/route-guard')
 
 
@@ -62,6 +61,9 @@ router.post('/inicio-sesion', isLoggedOut, (req, res, next) => {
 router.post('/cerrar-sesion', (req, res, next) => {
     req.session.destroy(() => res.redirect('/user/inicio-sesion'))
 })
+
+
+
 
 
 module.exports = router;
