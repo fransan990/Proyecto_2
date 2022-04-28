@@ -19,8 +19,7 @@
                 </div>
                 <div class="m-3">
                     <label for="ingredients" class="form-label">Ingredient</label>
-                    <select type="text" class="form-control" id="ingredient" name="ingredients">
-                        <option selected>Open this select menu</option>
+                    <select type="text" class="form-control" id="ingredient" name="ingredients" multiple>
                         {{#each ingredient}}
                         <option value="{{id}}">{{name}}</option>
                         {{/each}}
@@ -28,7 +27,8 @@
                 </div>
                 <div class="m-3">
                     <label for="preparation" class="form-label">Preparation</label>
-                    <input type="text" class="form-control" id="preparation" name="preparation">
+                    <input type="textarea" class="form-control" id="preparation" name="preparation">
+                    {{!-- <textarea name="preparation" id="preparation" cols="155" rows="5"></textarea> --}}
                 </div>
                 <div class="m-3">
                     <label for="restaurant" class="form-label">Restaurant</label>

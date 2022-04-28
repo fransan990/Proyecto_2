@@ -8,7 +8,7 @@ const Ingredient = require('../models/Ingredient.model');
 
 const fileUploader = require("../config/cloudinary.config")
 
-const { isLoggedOut, isLoggedIn } = require('./../middleware/route-guard')
+const { isLoggedOut, isLoggedIn, checkRole } = require('./../middleware/route-guard')
 
 
 router.get("/:id/details", isLoggedIn, (req, res, next) => {
@@ -22,7 +22,7 @@ router.get("/:id/details", isLoggedIn, (req, res, next) => {
     const promises = [
         User.findById(_id),
         Comment.find({ recipe: id }).populate("owner"),
-        Recipe.findById(id)
+        Recipe.findById(id).populate("ingredients")
     ]
 
     Promise
@@ -93,13 +93,17 @@ router.post('/create', fileUploader.single('image'), (req, res) => {
 
 //recipe list
 
-router.get('/listRecipe', (req, res) => {
-    // res.send('holaaa')
+router.get('/listRecipe', isLoggedIn, (req, res, next) => {
+
+    const isAdmin = req.session.currentUser.roles === "Admin"
+
+    console.log(isAdmin)
+
 
     Recipe
         .find()
         .then(recipe => {
-            res.render('recipe/listRecipe', { recipe })
+            res.render('recipe/listRecipe', { recipe, isAdmin })
         })
         .catch(error => next(error))
 })

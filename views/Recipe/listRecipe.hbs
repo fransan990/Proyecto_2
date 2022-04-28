@@ -21,8 +21,11 @@
 
                 </ul>
                 <a href="/" class="btn btn-dark">Home</a>
+
+                {{#if ../isAdmin}}
+                <a href="/" class="btn btn-dark">Admin</a>
+                {{/if}}
                 </ul>
-                <a href="/" class="btn btn-dark">Home</a>
 
                 {{/each}}
 

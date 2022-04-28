@@ -68,6 +68,7 @@ router.post('/cerrar-sesion', (req, res, next) => {
 router.get('/listaReceta', isLoggedIn, (req, res, next) => {
 
     const { _id } = req.session.currentUser
+    // const isMine = req.session.currentUser._id === id
     const promises = [Recipe.find({ owner: _id }), User.findById(_id).populate("favRecipes")]
 
     Promise
