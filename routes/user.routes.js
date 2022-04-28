@@ -53,12 +53,15 @@ router.post('/inicio-sesion', isLoggedOut, (req, res, next) => {
             }
 
             req.session.currentUser = user
+            req.app.locals.isLogged = true
+
             res.redirect('/')
         })
         .catch(error => next(error));
 })
 
 router.post('/cerrar-sesion', (req, res, next) => {
+    req.app.locals.isLogged = false
     req.session.destroy(() => res.redirect('/user/inicio-sesion'))
 })
 

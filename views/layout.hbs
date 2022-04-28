@@ -40,7 +40,12 @@
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                      <li><a class="dropdown-item" href="/user/registro">Register</a></li>
                      <li><a class="dropdown-item" href="/user/inicio-sesion">Sign in</a></li>
+
+                     {{#if isLogged}}
                      <li><a class="dropdown-item" href="/user/listaReceta">List Recipe</a></li>
+                     {{/if}}
+
+
                      <li>
                         <hr class="dropdown-divider">
                      </li>
