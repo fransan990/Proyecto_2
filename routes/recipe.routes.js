@@ -8,8 +8,10 @@ const Ingredient = require('../models/Ingredient.model');
 
 const fileUploader = require("../config/cloudinary.config")
 
+const { isLoggedOut, isLoggedIn } = require('./../middleware/route-guard')
 
-router.get("/:id/details", (req, res, next) => {
+
+router.get("/:id/details", isLoggedIn, (req, res, next) => {
     // res.send("detalles")
     //id para los comentarios
     // res.send(req.session.currentUser._id)
@@ -38,7 +40,7 @@ router.get("/:id/details", (req, res, next) => {
 //create comment
 
 
-router.post("/:id/details", (req, res, next) => {
+router.post("/:id/details", isLoggedIn, (req, res, next) => {
     // res.send(req.body)
     // res.send(req.session.currentUser._id)
     const { _id } = req.session.currentUser;
@@ -70,14 +72,19 @@ router.get('/create', (req, res) => {
 router.post('/create', fileUploader.single('image'), (req, res) => {
 
     const { _id } = req.session.currentUser
-    const { name, owner, category, ingredients, preparation, restaurant } = req.body
+    const { name, owner, category, ingredients, preparation, latitud, longitud } = req.body
     const { path } = req.file
-    console.log(req.file)
-    console.log(req)
-    console.log(path)
+
+    const location = {
+        type: 'Point',
+        coordinates: [latitud, longitud]
+    }
+
+    console.log(location)
+
 
     Recipe
-        .create({ name, image: path, owner: _id, category, ingredients, preparation, restaurant, })
+        .create({ name, image: path, owner: _id, category, ingredients, preparation, restaurant: { location } })
         .then(() => {
             res.redirect('/Recipe/listRecipe')
         })

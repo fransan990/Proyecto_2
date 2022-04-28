@@ -21,13 +21,18 @@
                 </div>
 
                 <div>
-                    const like =
                 </div>
                 <button type="submit" class="btn btn-dark">Save Comment</button>
 
             </form>
         </div>
     </div>
+
+
+    <p id="lata" hidden>{{recipe.restaurant.location.coordinates.[0]}}</p>
+    <p id="lnga" hidden>{{recipe.restaurant.location.coordinates.[1]}}</p>
+
+
 
 
     {{!-- {{#each user}}
@@ -53,7 +58,7 @@
 
     <figure class="restuarantsMap"></figure>
 
-    <a href="/api/places" target="_blank">Mira la API!</a>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

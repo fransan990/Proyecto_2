@@ -5,7 +5,7 @@ const saltRounds = 10
 const User = require("../models/User.model")
 const Recipe = require('../models/Recipe.model')
 
-const { isLoggedOut } = require('./../middleware/route-guard')
+const { isLoggedOut, isLoggedIn } = require('./../middleware/route-guard')
 
 
 router.get('/registro', (req, res, next) => {
@@ -65,7 +65,7 @@ router.post('/cerrar-sesion', (req, res, next) => {
 
 //listar recetas propias
 
-router.get('/listaReceta', (req, res, next) => {
+router.get('/listaReceta', isLoggedIn, (req, res, next) => {
 
     const { _id } = req.session.currentUser
     const promises = [Recipe.find({ owner: _id }), User.findById(_id).populate("favRecipes")]
@@ -93,7 +93,7 @@ router.post('/:id/recipeFav', (req, res, next) => {
     User
         .findByIdAndUpdate(_id, { $push: { favRecipes: id } })
         .then(() => {
-            res.redirect("/")
+            res.redirect("/user/listaReceta")
         })
         .catch(error => next(error))
 })

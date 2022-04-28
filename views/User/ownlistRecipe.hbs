@@ -10,9 +10,12 @@
             <hr>
 
             {{#each recipes}}
+            <a href="/recipe/{{id}}/details">{{name}}</a>
+
 
 
             <p>{{name}}</p>
+
             <img src="{{image}}" alt="image">
 
             {{/each}}
@@ -21,6 +24,7 @@
             <h3>recetas favoritas</h3>
 
             {{#each user.favRecipes}}
+            <a href="/recipe/{{id}}/details">{{name}}</a>
 
             <p>{{name}}</p>
             <img src="{{image}}" alt="image">
@@ -28,6 +32,8 @@
             <form action="/user/{{id}}/recipeFav/delete" method="POST">
                 <button type="submit" class="btn btn-dark">Quitar</button>
             </form>
+
+
 
 
 
