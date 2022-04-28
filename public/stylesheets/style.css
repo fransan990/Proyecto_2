@@ -3,6 +3,13 @@ body {
   font-weight: 300;
 }
 
+
+#preparation {
+  width: 1095px;
+  height: 100px;
+}
+
+
 footer {
   background-color: #212429;
   color: white;

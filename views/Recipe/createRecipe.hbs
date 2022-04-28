@@ -19,7 +19,7 @@
                 </div>
                 <div class="m-3">
                     <label for="ingredients" class="form-label">Ingredient</label>
-                    <select type="text" class="form-control" id="ingredient" name="ingredients">
+                    <select type="text" class="form-control" id="ingredient" name="ingredients" multiple>
                         <option selected>Open this select menu</option>
                         {{#each ingredient}}
                         <option value="{{id}}">{{name}}</option>
