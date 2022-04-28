@@ -12,8 +12,11 @@
                         <h3>{{name}}</h3>
                         <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
 
-                        <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
+                        <form action="/recipe/{{id}}/like" method="POST">
+                            <button class="btn btn-sm btn-warning" type="submit">Like</button>
+                        </form>
 
+                        <p>Likes: {{like}}</p>
                     </li>
 
                 </ul>

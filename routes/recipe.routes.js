@@ -152,4 +152,18 @@ router.post('/:id/delete', (req, res) => {
         .catch(err => console.log(err))
 })
 
+//boton de like
+
+router.post('/:id/like', (req, res) => {
+
+    const { id } = req.params
+
+    Recipe
+        .findByIdAndUpdate(id, { $inc: { like: 1 } })
+        .then(like => {
+            res.redirect('/recipe/listRecipe')
+        })
+        .catch(error => next(error))
+})
+
 module.exports = router;
