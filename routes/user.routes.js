@@ -53,12 +53,15 @@ router.post('/inicio-sesion', isLoggedOut, (req, res, next) => {
             }
 
             req.session.currentUser = user
+            req.app.locals.isLogged = true
+
             res.redirect('/')
         })
         .catch(error => next(error));
 })
 
 router.post('/cerrar-sesion', (req, res, next) => {
+    req.app.locals.isLogged = false
     req.session.destroy(() => res.redirect('/user/inicio-sesion'))
 })
 
@@ -68,6 +71,7 @@ router.post('/cerrar-sesion', (req, res, next) => {
 router.get('/listaReceta', isLoggedIn, (req, res, next) => {
 
     const { _id } = req.session.currentUser
+    // const isMine = req.session.currentUser._id === id
     const promises = [Recipe.find({ owner: _id }), User.findById(_id).populate("favRecipes")]
 
     Promise

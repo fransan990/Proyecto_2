@@ -2,6 +2,19 @@
 
     <p>{{recipe.name}}</p>
 
+    {{#each recipe.ingredients}}
+
+    <p>{{name}}</p>
+
+
+    {{/each}}
+    <p>{{recipe.preparation}}</p>
+
+
+    <form action="/user/{{recipe._id}}/recipeFav" method="POST">
+        <button type="submit" class="btn btn-dark">Guardar Receta</button>
+    </form>
+
     {{!-- COMMENT --}}
 
     <div class="row justify-content-center">

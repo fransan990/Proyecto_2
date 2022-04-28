@@ -4,12 +4,21 @@ body {
 }
 
 
+<<<<<<< HEAD
 #preparation {
   width: 1095px;
   height: 100px;
 }
 
 
+=======
+
+#preparation {
+  width: 1265px;
+  height: 100px;
+}
+
+>>>>>>> 75edff588c25c2f26a81b91831a715af71457539
 footer {
   background-color: #212429;
   color: white;
