@@ -30,6 +30,11 @@ router.get('/inicio-sesion', isLoggedOut, (req, res) => {
     // res.send("login")
 })
 
+router.get('/user/about', isLoggedOut, (req, res) => {
+    res.render('about')
+
+})
+
 router.post('/inicio-sesion', isLoggedOut, (req, res, next) => {
 
     const { username, password } = req.body
@@ -86,6 +91,8 @@ router.get('/listaReceta', isLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
+
+
 //receta guardada
 
 router.post('/:id/recipeFav', (req, res, next) => {
@@ -115,6 +122,12 @@ router.post('/:id/recipeFav/delete', (req, res, next) => {
             res.redirect("/user/listaReceta")
         })
         .catch(error => next(error))
+})
+
+//About
+
+router.get('/about', (req, res) => {
+    res.render("about")
 })
 
 module.exports = router;

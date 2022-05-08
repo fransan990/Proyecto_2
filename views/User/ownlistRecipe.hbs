@@ -1,48 +1,77 @@
 <div class="container">
     <div class="row">
-        <div class="col-12">
-
-
-
-            <h2>creado por {{user.username}}</h2>
-
-            <h3>recetas Mias</h3>
-            <hr>
-
-            {{#each recipes}}
-            <a href="/recipe/{{id}}/details">{{name}}</a>
-
-            <button>Fran</button>
-
-
-
-            <p>{{name}}</p>
-
-            <img src="{{image}}" alt="image">
-
-            {{/each}}
-            <hr>
-
-            <h3>recetas favoritas</h3>
-
-            {{#each user.favRecipes}}
-            <a href="/recipe/{{id}}/details">{{name}}</a>
-
-            <p>{{name}}</p>
-            <img src="{{image}}" alt="image">
-
-            <form action="/user/{{id}}/recipeFav/delete" method="POST">
-                <button type="submit" class="btn btn-dark">Quitar</button>
-            </form>
 
 
 
 
+        <h2>Count {{user.username}}</h2>
 
-            {{/each}}
+        <h3>My Recipes</h3>
+        <hr>
 
+        {{#each recipes}}
+        <div class="col-4 mb-4">
+            <div class="card h-100">
 
+                <div class="card-body">
+                    <h5 class="card-title"><a href="/recipe/{{id}}/details"><img src="{{image}}" class="card-img-top"
+                                alt="..."></a></h5>
+                    <p class="card-text text-center pt-4 fw-bold fs-5">{{name}}</p>
+                </div>
+                <div class="card-footer">
 
+                    <a href="/" class="btn btn-secondary col-12">Home</a>
+
+                    <a href="/recipe/{{id}}/edit" class="btn btn-dark col-12">Edit</a>
+
+                    <form action="/recipe/{{id}}/delete" method="post">
+                        <button type="submit" class="col-12 btn-danger"> Eliminar</button>
+                    </form>
+
+                </div>
+            </div>
         </div>
+
+        {{/each}}
+        <hr>
+
+        <h3>recetas favoritas</h3>
+
+        {{#each user.favRecipes}}
+
+        <div class="col-4 mb-4">
+            <div class="card h-100">
+
+                <div class="card-body">
+                    <h5 class="card-title"><a href="/recipe/{{id}}/details"><img src="{{image}}" class="card-img-top"
+                                alt="..."></a></h5>
+                    <p class="card-text text-center pt-4 fw-bold fs-5">{{name}}</p>
+                </div>
+                <div class="card-footer">
+
+                    <a href="/" class="btn btn-secondary col-12">Home</a>
+
+                </div>
+            </div>
+        </div>
+
+
+        {{!-- <a href="/recipe/{{id}}/details">{{name}}</a> --}}
+
+        {{!-- <p>{{name}}</p>
+        <img src="{{image}}" alt="image"> --}}
+
+        <form action="/user/{{id}}/recipeFav/delete" method="POST">
+            <button type="submit" class="btn btn-dark">Quitar</button>
+        </form>
+
+
+        {{/each}}
+
+
+
+
+
     </div>
+</div>
 </div>

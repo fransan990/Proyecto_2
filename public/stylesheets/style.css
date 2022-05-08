@@ -1,33 +1,249 @@
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Krub',
+    sans-serif;
   font-weight: 300;
+  overflow-x: hidden;
+
+}
+
+.em {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.bto {
+  position: relative;
+  /* bottom: 13px; */
+  top: 13px;
+}
+
+em {
+  color: darkgrey;
 }
 
 
-<<<<<<< HEAD
+.pad {
+  padding: 30px;
+  padding-left: 70px;
+  margin-top: 55px;
+}
+
+.bor {
+
+  border-left: 4px solid #ffc107;
+  height: 250px;
+}
+
+.margenT {
+  margin-top: 125px;
+}
+
+.quo {
+  color: #ffc107;
+  font-size: 100px;
+}
+
+.headline {
+  z-index: 2;
+  background-color: red;
+  position: relative;
+  /* top: 23px; */
+  bottom: 250px;
+
+}
+
+.headline3 {
+  z-index: -1;
+  position: relative;
+  /* top: 150px; */
+  width: 550px;
+  height: 350px;
+  padding: 30px;
+  background: #f8f9fa;
+  bottom: 240px;
+  left: 634px;
+
+}
+
+.imgF {
+  height: 599px;
+  width: 755px;
+}
+
+.headline4 {
+  z-index: -1;
+  position: relative;
+  /* top: 150px; */
+  width: 247px;
+  height: 110px;
+  padding: 30px;
+  background: #ffc107;
+  bottom: 270px;
+  left: 378px;
+
+}
+
+.headline5 {
+  z-index: -1;
+  position: relative;
+  /* top: 150px; */
+  width: 336px;
+  height: 900px;
+  padding: 30px;
+  background: #ffc107;
+  bottom: 790px;
+  left: 260px;
+
+}
+
+.headline6 {
+  z-index: -1;
+  position: relative;
+  /* top: 138px; */
+  width: 360px;
+  height: 101px;
+  padding: 30px;
+  background: #ffc107;
+  bottom: 81px;
+  left: 116px;
+
+}
+
+
+.detailsMap {
+  position: relative;
+  bottom: 600px;
+}
+
+.marDe {
+  margin-top: 150px;
+}
+
+.headline1 {
+  z-index: -1;
+  /* position: relative; */
+  top: 150px;
+  background-color: #ffc107;
+  position: relative;
+  padding: 50px;
+  width: 400px;
+  font-weight: 900;
+
+}
+
+.comDetails {
+  position: relative;
+  bottom: 700px;
+  left: 350px;
+}
+
+.enlace {
+  color: black;
+  border-bottom: 4px solid #ffc107;
+  text-decoration: none;
+  font-weight: bold;
+
+
+}
+
+.enlace:hover {
+  color: #ffc107;
+  border-bottom: 4px solid white;
+  transition: all .4s;
+}
+
+.headline2 {
+  border: 5px solid black;
+  width: 200px;
+  margin-left: 43px;
+}
+
+.pF {
+  Position: relative;
+  /* left: 0; */
+  /* right: 0; */
+  /* bottom: 0px; */
+  /* left: 10px; */
+  right: 550px;
+}
+
+.img1 {
+  height: 1000px;
+  position: absolute;
+  /* top: 9px; */
+  bottom: 3px;
+  z-index: -1;
+  width: 1050px;
+}
+
 #preparation {
   width: 1095px;
   height: 100px;
 }
 
-
-=======
-
-#preparation {
-  width: 1265px;
-  height: 100px;
+.card img {
+  /* filter: contrast(70%); */
+  /* filter: blur(2px); */
+  /* width: 350px; */
+  width: 414px;
+  height: 300px;
 }
 
->>>>>>> 75edff588c25c2f26a81b91831a715af71457539
+.card {
+  /* width: 500px; */
+  height: 600px;
+}
+
+.card:hover {
+  border: 4px solid #ffc107;
+}
+
+.card-body {
+  padding: 0px;
+  height: 400px;
+}
+
+
+
+.card img:hover {
+  /* filter: contrast(70%);
+  filter: blur(5px);
+  filter: contrast(100%); */
+  transition: all 3s;
+  /* transition: filter 0.5s cubic-bezier(.13, .11, .12, .11); */
+  /* -webkit-transform: scale(1.9); */
+  transform: scale(1.1);
+}
+
+
+
+input[name="form"]:focus {
+  border-color: #ffc107;
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075);
+  inset: 0 0 8px rgba(255, 144, 0, 0.6);
+  outline: 0 none;
+}
+
+.imgD {
+  width: 500px;
+  height: 45s0px;
+}
+
+
+.card-footer {
+  background-color: #f8f9fa;
+}
+
 footer {
-  background-color: #212429;
+  background-color: #f8f9fa;
   color: white;
   text-align: center;
   font-size: .7em;
-  padding: 5px;
-  position: fixed;
+  padding: 15px;
+  margin-top: 25px;
   width: 100%;
   bottom: 0;
+  position: relative;
 }
 
 footer .social-icons {
@@ -85,4 +301,39 @@ footer .social-icons {
 .restuarantsMap {
   height: 600px;
   background-color: red;
+}
+
+.fon {
+  background-color: #ffc107;
+  padding: 20px;
+}
+
+/* body .col {
+  background-color: rgb(239, 221, 54);
+  min-height: 40px;
+  width: 100vw;
+} */
+
+/* MARQUEE {
+  color: rgb(248, 241, 57);
+  margin-top: 7px;
+} */
+
+.caja2 {
+  background-image: url("images/sarten.jpg");
+  min-height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding-top: 130px;
+}
+
+.caja2_1 {
+  margin-top: 130px;
+  display: block;
+  margin-left: 20px;
+}
+
+.col-6 {
+  color: #000000;
 }

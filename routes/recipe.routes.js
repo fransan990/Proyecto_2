@@ -18,6 +18,7 @@ router.get("/:id/details", isLoggedIn, (req, res, next) => {
 
     const { _id } = req.session.currentUser;
     const { id } = req.params;
+    const isAdmin = req.session.currentUser.roles == 'Admin'
 
     const promises = [
         User.findById(_id),
@@ -29,7 +30,7 @@ router.get("/:id/details", isLoggedIn, (req, res, next) => {
         .all(promises)
         .then(([user, comments, recipe]) => {
             console.log(recipe)
-            res.render('recipe/detailsRecipe', { user, comments, recipe })
+            res.render('recipe/detailsRecipe', { user, comments, recipe, isAdmin })
         })
         .catch(error => next(error))
 
@@ -97,9 +98,6 @@ router.get('/listRecipe', isLoggedIn, (req, res, next) => {
 
     const isAdmin = req.session.currentUser.roles === "Admin"
 
-    console.log(isAdmin)
-
-
     Recipe
         .find()
         .then(recipe => {
@@ -108,11 +106,26 @@ router.get('/listRecipe', isLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
+//buscadorr
+
+router.get('/listRecipeShe', isLoggedIn, (req, res, next) => {
+
+    const { form } = req.query
+
+    Recipe
+        .find({ category: { $regex: '.*' + form + '.*', $options: "i" } })
+        .then(recipe => {
+            res.render('recipe/listRecipe', { recipe })
+        })
+        .catch(error => next(error))
+})
+
+
 
 //edit recipe
 
 router.get('/:id/edit', (req, res) => {
-    // res.send('holaaa')
+
     const { id } = req.params
 
     Recipe
@@ -127,11 +140,8 @@ router.get('/:id/edit', (req, res) => {
 
 router.post('/:id/edit', (req, res) => {
 
-    // res.send('holaaa')
     const { id } = req.params
     const { name, image, owner: _id, category, ingredients, preparation, restaurant } = req.body
-
-    console.log(req.body)
 
     Recipe
         .findByIdAndUpdate(id, { name, image, owner: _id, category, ingredients, preparation, restaurant })
@@ -140,7 +150,6 @@ router.post('/:id/edit', (req, res) => {
         })
         .catch(error => next(error))
 })
-
 
 //delete recipe
 

@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const app = require("../app");
 const Comment = require('../models/Comment.model');
-const { route } = require("./index.routes");
 
+const { isLoggedOut, isLoggedIn, checkRole } = require('./../middleware/route-guard')
 
 //edit comment
 
@@ -32,13 +32,14 @@ router.post('/:id/edit', (req, res) => {
 
 //delete comment
 
-router.post('/:id/delete', (req, res) => {
+router.post('/:id/delete', checkRole("Admin"), (req, res) => {
     const { id } = req.params
 
     Comment
         .findByIdAndDelete(id)
-        .then(() => {
-            res.redirect('/recipe/listRecipe')
+        .then((deletedComment) => {
+            console.log('HE BORRADO UN COMENTARIO')
+            res.redirect(`/recipe/${deletedComment.recipe._id}/details`)
         })
         .catch(err => console.log(err))
 })

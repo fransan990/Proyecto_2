@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row justify-content">
-        <div class="cold-md-6 mb-4">
+        <div class="cold-md-6 mb-4 mt-5">
             <h2>New Recipe</h2>
             <hr>
             <form action="/recipe/create" method="POST" enctype="multipart/form-data">
 
-                <div class="m-3">
+                <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name">
                 </div>
@@ -13,28 +13,24 @@
                     <label for="image" class="form-label">Image</label>
                     <input class="form-control" type="file" id="image" name="image">
                 </div>
-                <div class="m-3">
+                <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
                     <input type="text" class="form-control" id="category" name="category">
                 </div>
-                <div class="m-3">
+                <div class="mb-3">
                     <label for="ingredients" class="form-label">Ingredient</label>
                     <select type="text" class="form-control" id="ingredient" name="ingredients" multiple>
-<<<<<<< HEAD
-                        <option selected>Open this select menu</option>
-=======
->>>>>>> 75edff588c25c2f26a81b91831a715af71457539
                         {{#each ingredient}}
                         <option value="{{id}}">{{name}}</option>
                         {{/each}}
                     </select>
                 </div>
-                <div class="m-3">
+                <div class="mb-3">
                     <label for="preparation" class="form-label">Preparation</label>
                     <input type="textarea" class="form-control" id="preparation" name="preparation">
                     {{!-- <textarea name="preparation" id="preparation" cols="155" rows="5"></textarea> --}}
                 </div>
-                <div class="m-3">
+                <div class="mb-3">
                     <label for="restaurant" class="form-label">Restaurant</label>
                     <input type="text" class="form-control" name="latitud" id="lat" value="" hidden>
                     <input type="text" class="form-control" name="longitud" id="lng" value="" hidden>

@@ -1,78 +1,122 @@
 <div class="container">
-
-    <p>{{recipe.name}}</p>
-
-    {{#each recipe.ingredients}}
-
-    <p>{{name}}</p>
-
-
-    {{/each}}
-    <p>{{recipe.preparation}}</p>
-
-
-    <form action="/user/{{recipe._id}}/recipeFav" method="POST">
-        <button type="submit" class="btn btn-dark">Guardar Receta</button>
-    </form>
-
-    {{!-- COMMENT --}}
-
     <div class="row justify-content-center">
-        <div class="col-md-5 mt-5">
-            <h1>Create Comment {{user.username}}</h1>
-            <hr>
-            <form action="/recipe/{{recipe.id}}/details" method="POST">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                        name="description"></textarea>
+        <div class="col-6 mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <img src="{{recipe.image}}" class="imgD" alt="">
                 </div>
-
-                <div>
+                <div class="col-12 mt-5 p-5">
+                    <h1 class="w-50">
+                        {{recipe.name}}
+                        <form action="/user/{{recipe._id}}/recipeFav" method="POST">
+                            <button type="submit" class="btn btn-dark">Guardar Receta</button>
+                        </form>
+                    </h1>
+                    <div class="w-50 mt-3">
+                        {{!-- <h5>Ingredient</h5> --}}
+                        {{#each recipe.ingredients}}
+                        {{name}}
+                        {{/each}}
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-dark">Save Comment</button>
-
-            </form>
+            </div>
         </div>
+        <div class="col-6 marDe">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="w-75">
+                        <div class="fs-5 text">{{recipe.preparation}}</div>
+                    </h1>
+                </div>
+
+
+                <div class="col-12 mt-5 p-5">
+                    <div class="w-50 mt-3">
+                        <img src="{{recipe.image}}" class="imgD" alt="">
+                    </div>
+
+                </div>
+                <div class="headline5"></div>
+            </div>
+
+        </div>
+        <div class="col-12 comDetails">
+            <div class="col-md-5 mt-5 text-center">
+                <h1>Create Comment {{user.username}}</h1>
+                <hr>
+                <form action="/recipe/{{recipe.id}}/details" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            name="description"></textarea>
+                    </div>
+
+                    <div>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Save Comment</button>
+                </form>
+
+                {{#each comments}}
+                <div class="mt-5">
+                    <p>{{owner.username}}</p>
+                    <p>{{description}}</p>
+                </div>
+
+                {{#if ../isAdmin}}
+
+                <a href="/comment/{{id}}/edit" class="btn btn-dark">Edit</a>
+
+                <form action="/comment/{{id}}/delete" method="POST">
+                    <button class="btn btn-sm btn-warning" type="submit">Delete</button>
+                </form>
+
+                {{/if}}
+
+                {{/each}}
+
+            </div>
+        </div>
+
     </div>
 
-
-    <p id="lata" hidden>{{recipe.restaurant.location.coordinates.[0]}}</p>
-    <p id="lnga" hidden>{{recipe.restaurant.location.coordinates.[1]}}</p>
+</div>
 
 
 
-
-    {{!-- {{#each user}}
-
-    <p>{{username}}</p>
-    {{/each}} --}}
-    {{#each comments}}
-    <p>{{owner.username}}</p>
-    <p>{{description}}</p>
-
-
-    <a href="/comment/{{id}}/edit" class="btn btn-dark">Edit</a>
-    <form action="/comment/{{id}}/delete" method="POST">
-        <button class="btn btn-sm btn-warning" type="submit">Delete</button>
-    </form>
-
-    {{/each}}
-
-
-    <h2>Mapa</h2>
-    <hr>
-
-
-    <figure class="restuarantsMap"></figure>
+{{!-- COMMENT --}}
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/js/recipeDetailMap.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjOt5lgJiMo2s0X3EMAguiuDo52zdXYrY&callback=recipeDetailMap"></script>
+
+<p id="lata" hidden>{{recipe.restaurant.location.coordinates.[0]}}</p>
+<p id="lnga" hidden>{{recipe.restaurant.location.coordinates.[1]}}</p>
+
+
+
+
+{{!-- {{#each user}}
+
+<p>{{username}}</p>
+{{/each}} --}}
+
+
+
+<h2>Mapa</h2>
+<hr>
+
+
+
+
+<figure class="restuarantsMap detailsMap"></figure>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/recipeDetailMap.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjOt5lgJiMo2s0X3EMAguiuDo52zdXYrY&callback=recipeDetailMap"></script>
 
 
 </div>
