@@ -1,23 +1,23 @@
        
-|        Method  |    -   |     URL   |  -           |           Description|
-|----------------|--------|-----------|--------------|----------------------|
+|        Method  |    -   |     URL   |  -           |           Description.     |
+|----------------|--------|-----------|--------------|----------------------------|
 |
 |
 |Pagina de inicio| | |
-| | | |
+| 
 |
-|        `GET`     |                `/`                  |              `Home`   |
+|        `GET`     |                `/`                  |              `Home`    |
 |        `GET`     |             `/recipe`               |             `Recipe`   |
-|        `GET`     |             `/about`               |              `About`   |
------------------------------------------------------------------
+|        `GET`     |             `/about`                |              `About`   |
+|
 |
 |                     [---Pagina de login----](url)
 |
-|        GET             /user                                Registro User
-|        GET             /user/login                          Formulario Login
-|        GET             /user/CrearCuenta                    Registro
-|        POST            /user/CrearCuenta                    Registro
-|       POST            /user/CerrarSesion                   Cerrar Sesion
+|        `GET`             /user                                Registro User
+|        `GET`             /user/login                          Formulario Login
+|        `GET`             /user/CrearCuenta                    Registro
+|        `POST`            /user/CrearCuenta                    Registro
+|       `POST`            /user/CerrarSesion                   Cerrar Sesion
 |
 |      --------------------------------------------------------------------
 |
