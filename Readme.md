@@ -3,7 +3,7 @@
 |----------------|--------|-----------|--------------|----------------------|
 |
 |
-|                   | Pagina de inicio| | |
+|                   Pagina de inicio | | |
 |
 |        GET     |                /                  |              Home.   |
 |        GET     |             /recipe               |             Recipe   |
