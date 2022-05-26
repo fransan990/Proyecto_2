@@ -1,14 +1,14 @@
        
-|        Method  |     URL   |           Description.     |
+|        Method  |     URL   |  Description.     |
 |----------------|-----------|----------------------------|
 |
 |
 |
 | 
 |
-|        `GET`     |                `/`                  |              `Home`    |
-|        `GET`     |             `/recipe`               |             `Recipe`   |
-|        `GET`     |             `/about`                |              `About`   |
+|        `GET`   |    `/`    | `Home`    |
+|        `GET`   | `/recipe` | `Recipe`  |
+|        `GET`   |  `/about` | `About`   |
 |
 |
 |                     [---Pagina de login----](url)
