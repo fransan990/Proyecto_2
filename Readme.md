@@ -4,6 +4,7 @@
 |
 |
 |                   Pagina de inicio| | |
+| | | |
 |
 |        GET     |                /                  |              Home.   |
 |        GET     |             /recipe               |             Recipe   |
