@@ -11,7 +11,7 @@
 |        `GET`   |  `/about` | `About`   |
 |
 | | | | 
-|                     [---Pagina de login----](url)
+| Pagina de login | | |
 |
 |        `GET`     |             `/user`                 |     `Registro User`    |
 |        `GET`     |            `/user/login`            |     `Formulario Login` |
@@ -21,7 +21,7 @@
 |
 |    
 | | | | 
-|                      [---Pagina de recetas---](url)
+| Pagina de recetas | | |
 |
 |        `GET`     |      `/recipe/VerRecetas`                     `See recipe`   |
 |        `GET`     |     `/recipe/VerRecetas/details`     |       `See recipe`    |
