@@ -1,12 +1,16 @@
 # Recipe 🥘
 
 ## RUTES AND METHODS
+
+### Home
 | Method | URL | Description |
 |--------|-----|-------------|
 | `GET` | `/` | Home |
 | `GET` | `/recipe` | Recipe |
 | `GET` | `/about` | About |
-| **Login** | | |
+
+## Lgogin
+
 | `GET` | `/user` | User |
 | `GET` | `/user/login` | Login |
 | `GET` | `/user/CrearCuenta` | Signup |
