@@ -1,6 +1,7 @@
 | Method | URL | Description |
 |--------|-----|-------------|
-| |              Home | |
+| | | |
+| | Home | |
 | `GET` | `/` | Home |
 | `GET` | `/recipe` | Recipe |
 | `GET` | `/about` | About |
