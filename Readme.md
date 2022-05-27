@@ -10,7 +10,7 @@
 |        `GET`   |  `/about` | `About`   |
 |
 | 
-| Pagina de login | | |
+| Pagina de login
 |
 |        `GET`     |             `/user`                 |     `Registro User`    |
 |        `GET`     |            `/user/login`            |     `Formulario Login` |
@@ -19,7 +19,7 @@
 |        `POST`    |          `/user/CerrarSesion`       |      `Cerrar Sesion`   |
 |
 |    
-| | | | 
+| 
 | Pagina de recetas | | |
 |
 |        `GET`     |      `/recipe/VerRecetas`                     `See recipe`   |
