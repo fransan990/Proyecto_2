@@ -9,7 +9,7 @@
 |        `GET`   | `/recipe` | `Recipe`  |
 |        `GET`   |  `/about` | `About`   |
 |
-| | | | 
+| 
 | Pagina de login | | |
 |
 |        `GET`     |             `/user`                 |     `Registro User`    |
