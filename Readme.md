@@ -23,11 +23,11 @@
 | | | | 
 |                      [---Pagina de recetas---](url)
 |
-|        GET       |      /recipe/VerRecetas                     See recipe       |
-|        GET       |     /recipe/VerRecetas/details      |       See recipe       |
-|        GET       |     /recipe/edit                    |       Edit             |
-|        POST      |      /recipe/edit                  |         Edit            |
-|        GET       |      /recipe/create                |         Create          |
-|        POST      |      /recipe/create                |         Creat           |
-|        POST      |      /recipe/delete                |         Delete          |
+|        `GET`     |      `/recipe/VerRecetas`                     `See recipe`   |
+|        `GET`     |     `/recipe/VerRecetas/details`     |       `See recipe`    |
+|        `GET`     |     `/recipe/edit`                   |       `Edit`          |
+|        `POST`    |      `/recipe/edit`                  |         `Edit`        |
+|        `GET`     |      `/recipe/create`                |         `Create`      |
+|        `POST`    |      `/recipe/create`                |         `Create`      |
+|        `POST`    |      `/recipe/delete`                |         `Delete`      |
 
