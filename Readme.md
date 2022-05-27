@@ -1,6 +1,6 @@
 # Recipe 🥘
 
-## RUTES AND METHODS
+## RUTES
 
 ### Home
 
