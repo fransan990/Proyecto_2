@@ -1,6 +1,6 @@
 # Recipe 🥘
 
-### Home
+## RUTES AND METHODS
 | Method | URL | Description |
 |--------|-----|-------------|
 | `GET` | `/` | Home |
