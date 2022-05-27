@@ -3,6 +3,7 @@
 ## RUTES AND METHODS
 
 ### Home
+
 | Method | URL | Description |
 |--------|-----|-------------|
 | `GET` | `/` | Home |
