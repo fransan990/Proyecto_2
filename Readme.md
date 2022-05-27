@@ -1,5 +1,5 @@
 
-**Home** 
+### Home
 | Method | URL | Description |
 |--------|-----|-------------|
 | `GET` | `/` | Home |
