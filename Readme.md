@@ -10,7 +10,7 @@
 | `GET` | `/recipe` | Recipe |
 | `GET` | `/about` | About |
 
-## Lgogin
+## Login
 
 | Method | URL | Description |
 |--------|-----|-------------|
