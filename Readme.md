@@ -11,12 +11,18 @@
 
 ## Lgogin
 
+| Method | URL | Description |
+|--------|-----|-------------|
 | `GET` | `/user` | User |
 | `GET` | `/user/login` | Login |
 | `GET` | `/user/CrearCuenta` | Signup |
 | `POST` | `/user/CrearCuenta` | Signup |
 | `POST` | `/user/CerrarSesion` | Log out |
-| | **Recipe** | |
+
+## Recipe
+
+| Method | URL | Description |
+|--------|-----|-------------|
 | `GET` | `/recipe/VerRecetas` | All Recipe |
 | `GET` | `/recipe/VerRecetas/details` | See recipe deatails |
 | `GET` |	`/recipe/edit` | Edit recipe | 
