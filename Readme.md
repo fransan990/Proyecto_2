@@ -32,3 +32,18 @@
 | `POST`| `/recipe/create`| Create recipe |
 | `POST`| `/recipe/delete`| Delete recipe | 
 
+
+## Ingredient
+
+| Method | URL | Description |
+|--------|-----|-------------|
+| `GET` | `/ingredient/create` | Create ingredient |
+| `POST`| `/ingredient/create` | Create ingredient |
+| `GET` | `/ingredient/list` | All ingredient |
+| `GET` |	`/ingredient/:id/edit` | Edit ingredient |
+| `POST` |	`/ingredient/:id/edit` | Edit ingredient |
+| `POST`| `/ingredient/:id/delte` | Delete ingredient |
+
+
+
+
