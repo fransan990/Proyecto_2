@@ -44,6 +44,17 @@
 | `POST` |	`/ingredient/:id/edit` | Edit ingredient |
 | `POST`| `/ingredient/:id/delte` | Delete ingredient |
 
+## Comment
+
+| Method | URL | Description |
+|--------|-----|-------------|
+| `GET` | `/comment/:id/edit` | Create ingredient |
+| `POST`| `/ingredient/create` | Create ingredient |
+| `GET` | `/ingredient/list` | All ingredient |
+| `GET` |	`/ingredient/:id/edit` | Edit ingredient |
+| `POST` |	`/ingredient/:id/edit` | Edit ingredient |
+| `POST`| `/ingredient/:id/delte` | Delete ingredient |
+
 
 
 
