@@ -28,7 +28,7 @@
 | `GET` | `/recipe/VerRecetas/details` | See recipe deatails |
 | `GET` |	`/recipe/edit` | Edit recipe | 
 | `POST`| `/recipe/edit` | Edit recipe |
-| `GET` | `/recipe/create`| `Create recipe` |
-| `POST`| `/recipe/create`| `Create recipe` |
-| `POST`| `/recipe/delete`| `Delete recipe` | 
+| `GET` | `/recipe/create`| Create recipe |
+| `POST`| `/recipe/create`| Create recipe |
+| `POST`| `/recipe/delete`| Delete recipe | 
 
