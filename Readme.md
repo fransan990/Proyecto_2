@@ -14,10 +14,12 @@
 
 | Method | URL | Description |
 |--------|-----|-------------|
-| `GET` | `/user` | User |
-| `GET` | `/user/login` | Login |
-| `GET` | `/user/CrearCuenta` | Signup |
-| `POST` | `/user/CrearCuenta` | Signup |
+| `GET` | `/user/registro` | Signup |
+| `POST`| `/user/registro` | Signup |
+| `GET` | `/user/inicio-sesion` | Login |
+| `POST`| `/user/inicio-sesion` | Login |
+| `GET` | `/user/about` | About |
+| `POST` | `/user/listaReceta` | All recipe own |
 | `POST` | `/user/CerrarSesion` | Log out |
 
 ## Recipe
