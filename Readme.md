@@ -1,6 +1,6 @@
 # Re-fs (Recipe) 🥘
 
-<img  src="https://github.com/fransan990/Proyecto_2/blob/main/public/images/portada.png" alt="Portada" width="100" height="100"/>
+<img  src="https://github.com/fransan990/Proyecto_2/blob/main/public/images/portada.png" alt="Portada" width="300" height="300"/>
 
 ## ABOUT
 
