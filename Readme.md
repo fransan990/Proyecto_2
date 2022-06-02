@@ -31,7 +31,8 @@
 | `GET` | `/recipe/create`| Create recipe |
 | `POST`| `/recipe/create`| Create recipe |
 | `POST`| `/recipe/delete`| Delete recipe | 
-| `GET`| `/listRecipeShe`| Search recipe | 
+| `GET`| `/recipe/listRecipeShe`| Search recipe | 
+| `GET`| `/recipe/:id/like`| Like recipe | 
 
 
 
