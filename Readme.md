@@ -2,13 +2,6 @@
 
 ## RUTES
 
-### Home
-
-| Method | URL | Description |
-|--------|-----|-------------|
-| `GET` | `/` | Home |
-| `GET` | `/recipe` | Recipe |
-| `GET` | `/about` | About |
 
 ## User
 
@@ -19,8 +12,10 @@
 | `GET` | `/user/inicio-sesion` | Login |
 | `POST`| `/user/inicio-sesion` | Login |
 | `GET` | `/user/about` | About |
-| `POST` | `/user/listaReceta` | All recipe own |
-| `POST` | `/user/CerrarSesion` | Log out |
+| `GET` | `/user/listaReceta` | All recipe own |
+| `POST` | `/user/:id/recipeFav` | Save recipe |
+| `POST` | `/user/:id/recipeFav/delete` | Save recipe |
+
 
 ## Recipe
 
@@ -35,8 +30,6 @@
 | `POST`| `/recipe/delete`| Delete recipe | 
 | `GET`| `/recipe/listRecipeShe`| Search recipe | 
 | `GET`| `/recipe/:id/like`| Like recipe | 
-
-
 
 
 ## Ingredient
