@@ -1,6 +1,6 @@
 # Recipe 🥘
 
-##LANGUAJES AND TOOLS
+## LANGUAJES AND TOOLS
 
 ## RUTES
 
