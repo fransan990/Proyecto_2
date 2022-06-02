@@ -1,5 +1,9 @@
 # Recipe 🥘
 
+## ABOUT
+
+<p> Web application where users can view recipes created by themselves and search for any other recipe they are interested in and can edit and delete their own recipes while they can also save the recipes they like the most in their profiles and in the Google Places API, where they can find the name and location of the restaurants where these recipes are located.</p>
+
 ## LANGUAJES AND TOOLS
 
 <p align="left">
