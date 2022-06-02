@@ -10,7 +10,7 @@
 | `GET` | `/recipe` | Recipe |
 | `GET` | `/about` | About |
 
-## Login
+## User
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -54,7 +54,7 @@
 |--------|-----|-------------|
 | `GET` | `/comment/:id/edit` | Edit comment |
 | `POST`| `/comment/:id/edit` | Edit comment |
-| `GET` | `/ingredient/list` | All ingredient |
+| `POST` | `/comment/:id/delete` | Delete comment |
 | `GET` |	`/ingredient/:id/edit` | Edit ingredient |
 | `POST` |	`/ingredient/:id/edit` | Edit ingredient |
 | `POST`| `/ingredient/:id/delte` | Delete ingredient |
