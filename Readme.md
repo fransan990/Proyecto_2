@@ -52,8 +52,8 @@
 
 | Method | URL | Description |
 |--------|-----|-------------|
-| `GET` | `/comment/:id/edit` | Create ingredient |
-| `POST`| `/ingredient/create` | Create ingredient |
+| `GET` | `/comment/:id/edit` | Edit comment |
+| `POST`| `/comment/:id/edit` | Edit comment |
 | `GET` | `/ingredient/list` | All ingredient |
 | `GET` |	`/ingredient/:id/edit` | Edit ingredient |
 | `POST` |	`/ingredient/:id/edit` | Edit ingredient |
