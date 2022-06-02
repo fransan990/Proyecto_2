@@ -52,7 +52,7 @@
 | `POST` | `/comment/:id/delete` | Delete comment |
 | `GET` |	`/ingredient/:id/edit` | Edit ingredient |
 | `POST` |	`/ingredient/:id/edit` | Edit ingredient |
-| `POST`| `/ingredient/:id/delte` | Delete ingredient |
+| `POST`| `/ingredient/:id/delete` | Delete ingredient |
 
 
 
