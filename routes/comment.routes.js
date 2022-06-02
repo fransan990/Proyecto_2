@@ -4,10 +4,9 @@ const Comment = require('../models/Comment.model');
 
 const { isLoggedOut, isLoggedIn, checkRole } = require('./../middleware/route-guard')
 
-//edit comment
-
-// res.send('holi')
+//Editar comment
 router.get('/:id/edit', (req, res) => {
+
     const { id } = req.params
 
     Comment
@@ -19,6 +18,7 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.post('/:id/edit', (req, res) => {
+
     const { id } = req.params
     const { description } = req.body
 
@@ -30,9 +30,9 @@ router.post('/:id/edit', (req, res) => {
         .catch(err => console.log(err))
 })
 
-//delete comment
-
+//Eliminar comentario
 router.post('/:id/delete', checkRole("Admin"), (req, res) => {
+
     const { id } = req.params
 
     Comment
@@ -43,4 +43,5 @@ router.post('/:id/delete', checkRole("Admin"), (req, res) => {
         })
         .catch(err => console.log(err))
 })
+
 module.exports = router

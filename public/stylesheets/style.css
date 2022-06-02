@@ -13,7 +13,6 @@ body {
 
 .bto {
   position: relative;
-  /* bottom: 13px; */
   top: 13px;
 }
 
@@ -47,7 +46,6 @@ em {
   z-index: 2;
   background-color: red;
   position: relative;
-  /* top: 23px; */
   bottom: 250px;
 
 }
@@ -55,7 +53,6 @@ em {
 .headline3 {
   z-index: -1;
   position: relative;
-  /* top: 150px; */
   width: 550px;
   height: 350px;
   padding: 30px;
@@ -73,7 +70,6 @@ em {
 .headline4 {
   z-index: -1;
   position: relative;
-  /* top: 150px; */
   width: 247px;
   height: 110px;
   padding: 30px;
@@ -86,7 +82,6 @@ em {
 .headline5 {
   z-index: -1;
   position: relative;
-  /* top: 150px; */
   width: 336px;
   height: 900px;
   padding: 30px;
@@ -99,7 +94,6 @@ em {
 .headline6 {
   z-index: -1;
   position: relative;
-  /* top: 138px; */
   width: 360px;
   height: 101px;
   padding: 30px;
@@ -121,7 +115,6 @@ em {
 
 .headline1 {
   z-index: -1;
-  /* position: relative; */
   top: 150px;
   background-color: #ffc107;
   position: relative;
@@ -160,17 +153,12 @@ em {
 
 .pF {
   Position: relative;
-  /* left: 0; */
-  /* right: 0; */
-  /* bottom: 0px; */
-  /* left: 10px; */
   right: 550px;
 }
 
 .img1 {
   height: 1000px;
   position: absolute;
-  /* top: 9px; */
   bottom: 3px;
   z-index: -1;
   width: 1050px;
@@ -182,15 +170,11 @@ em {
 }
 
 .card img {
-  /* filter: contrast(70%); */
-  /* filter: blur(2px); */
-  /* width: 350px; */
   width: 414px;
   height: 300px;
 }
 
 .card {
-  /* width: 500px; */
   height: 600px;
 }
 
@@ -206,12 +190,7 @@ em {
 
 
 .card img:hover {
-  /* filter: contrast(70%);
-  filter: blur(5px);
-  filter: contrast(100%); */
   transition: all 3s;
-  /* transition: filter 0.5s cubic-bezier(.13, .11, .12, .11); */
-  /* -webkit-transform: scale(1.9); */
   transform: scale(1.1);
 }
 
@@ -307,17 +286,6 @@ footer .social-icons {
   background-color: #ffc107;
   padding: 20px;
 }
-
-/* body .col {
-  background-color: rgb(239, 221, 54);
-  min-height: 40px;
-  width: 100vw;
-} */
-
-/* MARQUEE {
-  color: rgb(248, 241, 57);
-  margin-top: 7px;
-} */
 
 .caja2 {
   background-image: url("images/sarten.jpg");

@@ -1,23 +1,15 @@
 <div class="container">
-
-
-    {{!-- EDIT COMMENT --}}
-
     <div class="row justify-content-center">
         <div class="col-md-5 mt-5">
             <h1>Edit Comment</h1>
             <hr>
-
             <form action="/comment/{{id}}/edit" method="POST">
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"
                         value="{{comment.description}}"></textarea>
                 </div>
-
                 <button type="submit" class="btn btn-dark">Save Comment</button>
-
             </form>
-
         </div>
     </div>

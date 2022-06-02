@@ -1,18 +1,13 @@
 <div class="container">
-
     <div class="row justify-content-center">
-
         <div class="col-md-6 mt-5 mb-5">
-
             <h1>Register</h1>
             <hr>
-
             <form action="/user/registro" method="POST">
                 <div class="mb-3">
                     <label for="Username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="Username" name="username">
                 </div>
-
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password">
@@ -21,24 +16,23 @@
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email">
                 </div>
-
                 <div class="mb-3">
                     <label for="telephone" class="form-label">Telephone</label>
                     <input type="number" class="form-control" id="telephone" name="telephone">
                 </div>
-
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-dark block">Access</button>
                 </div>
 
                 {{#if errorMessage}}
+
                 <div id="errorMessage">
                     <p>{{errorMessage}}</p>
                 </div>
+
                 {{/if}}
 
             </form>
         </div>
     </div>
-
 </div>

@@ -44,11 +44,12 @@
                      <li><a class="dropdown-item" href="/user/registro">Register</a></li>
                      <li><a class="dropdown-item" href="/user/inicio-sesion">Sign in</a></li>
                      <hr>
+
                      {{#if isLogged}}
+
                      <li><a class="dropdown-item" href="/user/listaReceta">List Recipe</a></li>
                      <li><a class="dropdown-item" href="/recipe/create">Create Recipe</a></li>
 
-                     {{/if}}
 
 
                      <li>
@@ -59,6 +60,9 @@
                            <button class="dropdown-item">Cerrar Sesion</button>
                         </form>
                      </li>
+
+                     {{/if}}
+
                   </ul>
                </li>
             </ul>

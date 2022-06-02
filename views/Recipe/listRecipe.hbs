@@ -2,7 +2,6 @@
     <div class="row">
         <div class="col-12">
             <div class="row">
-
                 <div class="col-12 mb-5 mt-5 text-center">
                     <h3>Search</h3>
                     <form action="/recipe/listRecipeShe" method="GET">
@@ -12,85 +11,43 @@
                     </form>
                 </div>
 
-
-
-
-
-
-
                 {{#each recipe}}
 
+                <div class="col-4 mb-4">
+                    <div class="card h-100">
 
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/recipe/{{id}}/details"><img src="{{image}}"
+                                        class="card-img-top" alt="..."></a></h5>
+                            <p class="card-text text-center pt-4 fw-bold fs-5">{{name}}</p>
+                        </div>
+                        <div class="card-footer">
 
+                            <form action="/recipe/{{id}}/like" method="POST">
+                                <button class="btn btn-sm btn-success col-12 mt-3" type="submit">Like</button>
+                            </form>
+                            <a href="/" class="btn btn-secondary col-12">Home</a>
 
-                {{!-- <div class="col-12 mb-3">
-                    <a href="/recipe/{{id}}/details">{{name}}</a>
-                    <img src="{{image}}" alt="">
-                    <ul>
-                        <li class="row">
-                            <h3>{{name}}</h3>
-                            <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
+                            <small class="text-muted ">
+                                <p class="text-center pt-4">Likes: {{like}}</p>
+                            </small>
 
+                            {{#if ../isAdmin}}
 
-                            <p>Likes: {{like}}</p>
-                        </li>
+                            <a href="/recipe/{{id}}/edit" class="btn btn-dark col-12">Edit</a>
+                            <form action="/recipe/{{id}}/delete" method="post">
+                                <button type="submit" class="col-12 btn-danger"> Eliminar</button>
+                            </form>
 
-                    </ul>
-                    <a href="/" class="btn btn-dark">Home</a>
+                            {{/if}}
 
-                    {{#if ../isAdmin}}
-                    <a href="/" class="btn btn-dark">Admin</a>
-                    <form action="/recipe/{{id}}/delete" method="post">
-                        <button type="submit"> Eliminar</button>
-                    </form>
-                    <a href="/recipe/{{id}}/edit" class="btn btn-dark">Edit</a>
-
-                    {{/if}} --}}
-
-
-
-
-                    <div class="col-4 mb-4">
-                        <div class="card h-100">
-
-                            <div class="card-body">
-                                <h5 class="card-title"><a href="/recipe/{{id}}/details"><img src="{{image}}"
-                                            class="card-img-top" alt="..."></a></h5>
-                                <p class="card-text text-center pt-4 fw-bold fs-5">{{name}}</p>
-                            </div>
-                            <div class="card-footer">
-
-                                <form action="/recipe/{{id}}/like" method="POST">
-                                    <button class="btn btn-sm btn-success col-12 mt-3" type="submit">Like</button>
-                                </form>
-                                <a href="/" class="btn btn-secondary col-12">Home</a>
-
-                                <small class="text-muted ">
-                                    <p class="text-center pt-4">Likes: {{like}}</p>
-                                </small>
-                                {{#if ../isAdmin}}
-                                <a href="/recipe/{{id}}/edit" class="btn btn-dark col-12">Edit</a>
-
-                                <form action="/recipe/{{id}}/delete" method="post">
-                                    <button type="submit" class="col-12 btn-danger"> Eliminar</button>
-                                </form>
-
-                                {{/if}}
-
-                            </div>
                         </div>
                     </div>
-
-
-
-
-
-                    {{/each}}
                 </div>
 
-
-
+                {{/each}}
 
             </div>
         </div>
     </div>
+</div>

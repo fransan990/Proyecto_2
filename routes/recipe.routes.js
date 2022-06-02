@@ -12,9 +12,6 @@ const { isLoggedOut, isLoggedIn, checkRole } = require('./../middleware/route-gu
 
 
 router.get("/:id/details", isLoggedIn, (req, res, next) => {
-    // res.send("detalles")
-    //id para los comentarios
-    // res.send(req.session.currentUser._id)
 
     const { _id } = req.session.currentUser;
     const { id } = req.params;
@@ -36,14 +33,10 @@ router.get("/:id/details", isLoggedIn, (req, res, next) => {
 
 });
 
-//Comment
-
-//create comment
-
-
+//Comentario
+//Crear comentario
 router.post("/:id/details", isLoggedIn, (req, res, next) => {
-    // res.send(req.body)
-    // res.send(req.session.currentUser._id)
+
     const { _id } = req.session.currentUser;
     const { description } = req.body
     const { id } = req.params
@@ -57,8 +50,7 @@ router.post("/:id/details", isLoggedIn, (req, res, next) => {
 
 });
 
-// create recipe | ingredient
-
+// Crear receta | Ingrediente
 router.get('/create', (req, res) => {
 
     Ingredient
@@ -68,7 +60,6 @@ router.get('/create', (req, res) => {
         })
         .catch(error => next(error))
 })
-
 
 router.post('/create', fileUploader.single('image'), (req, res) => {
 
@@ -81,9 +72,6 @@ router.post('/create', fileUploader.single('image'), (req, res) => {
         coordinates: [latitud, longitud]
     }
 
-    console.log(location)
-
-
     Recipe
         .create({ name, image: path, owner: _id, category, ingredients, preparation, restaurant: { location } })
         .then(() => {
@@ -92,8 +80,7 @@ router.post('/create', fileUploader.single('image'), (req, res) => {
         .catch(error => next(error))
 })
 
-//recipe list
-
+//Lista de recetas
 router.get('/listRecipe', isLoggedIn, (req, res, next) => {
 
     const isAdmin = req.session.currentUser.roles === "Admin"
@@ -106,8 +93,7 @@ router.get('/listRecipe', isLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
-//buscadorr
-
+//Buscadorr de recetas
 router.get('/listRecipeShe', isLoggedIn, (req, res, next) => {
 
     const { form } = req.query
@@ -120,10 +106,7 @@ router.get('/listRecipeShe', isLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
-
-
-//edit recipe
-
+//Editar receta
 router.get('/:id/edit', (req, res) => {
 
     const { id } = req.params
@@ -151,8 +134,7 @@ router.post('/:id/edit', (req, res) => {
         .catch(error => next(error))
 })
 
-//delete recipe
-
+//Eliminar receta
 router.post('/:id/delete', (req, res) => {
 
     const { id } = req.params
@@ -165,8 +147,7 @@ router.post('/:id/delete', (req, res) => {
         .catch(err => console.log(err))
 })
 
-//boton de like
-
+//Boton de like de recetas 
 router.post('/:id/like', (req, res) => {
 
     const { id } = req.params

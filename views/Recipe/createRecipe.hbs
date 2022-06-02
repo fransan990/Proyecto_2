@@ -4,7 +4,6 @@
             <h2>New Recipe</h2>
             <hr>
             <form action="/recipe/create" method="POST" enctype="multipart/form-data">
-
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name">
@@ -20,47 +19,43 @@
                 <div class="mb-3">
                     <label for="ingredients" class="form-label">Ingredient</label>
                     <select type="text" class="form-control" id="ingredient" name="ingredients" multiple>
+
                         {{#each ingredient}}
+
                         <option value="{{id}}">{{name}}</option>
+
                         {{/each}}
+
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="preparation" class="form-label">Preparation</label>
                     <input type="textarea" class="form-control" id="preparation" name="preparation">
-                    {{!-- <textarea name="preparation" id="preparation" cols="155" rows="5"></textarea> --}}
                 </div>
                 <div class="mb-3">
                     <label for="restaurant" class="form-label">Restaurant</label>
                     <input type="text" class="form-control" name="latitud" id="lat" value="" hidden>
                     <input type="text" class="form-control" name="longitud" id="lng" value="" hidden>
                 </div>
-
-
-
                 <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+
                 <div id="map"></div>
                 <ul id="geoData">
                     <li>Direccion: <span id="location"></span></li>
                     <li>CP: <span id="postal_code"></span></li>
                     <li>Pais: <span id="country"></span></li>
-
                 </ul>
 
-
                 <figure class="restuarantsMap"></figure>
-
                 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
                 <script src="/js/recipeCreateMap.js"></script>
-
                 <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjOt5lgJiMo2s0X3EMAguiuDo52zdXYrY&libraries=places&callback=initMap"></script>
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjOt5lgJiMo2s0X3EMAguiuDo52zdXYrY&libraries=places&callback=initMap">
+                    </script>
 
                 <button type="submit" class="btn btn-dark">Enter</button>
                 <a href="/" class="btn btn-dark">Home</a>
-
             </form>
         </div>
-
     </div>
 </div>

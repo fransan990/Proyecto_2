@@ -1,18 +1,10 @@
 let map
-
 let lata = (document.getElementById("lata").innerHTML) * 1
 let lnga = (document.getElementById("lnga").innerHTML) * 1
-
-
-console.log(lata)
-console.log(lnga)
-
 
 function recipeDetailMap() {
     renderMap()
     placeMarkers()
-
-
 }
 
 function renderMap() {

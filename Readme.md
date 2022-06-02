@@ -42,54 +42,54 @@
 
 ### User
 
-| Method | URL | Description |
-|--------|-----|-------------|
-| `GET` | `/user/registro` | Signup |
-| `POST`| `/user/registro` | Signup |
-| `GET` | `/user/inicio-sesion` | Login |
-| `POST`| `/user/inicio-sesion` | Login |
-| `GET` | `/user/about` | About |
-| `GET` | `/user/listaReceta` | All recipe own |
-| `POST` | `/user/:id/recipeFav` | Save recipe |
-| `POST` | `/user/:id/recipeFav/delete` | Save recipe |
+| Method | URL | Description | Protected | Roles |
+|--------|-----|-------------|-----------|-------|
+| `GET` | `/user/registro` | Signup | False | All | 
+| `POST`| `/user/registro` | Signup | False | All | 
+| `GET` | `/user/inicio-sesion` | Login | False | All | 
+| `POST`| `/user/inicio-sesion` | Login | False | All | 
+| `GET` | `/user/about` | About | False | All |
+| `GET` | `/user/listaReceta` | All recipe own | True | All |
+| `POST` | `/user/:id/recipeFav` | Save recipe | True | All |
+| `POST` | `/user/:id/recipeFav/delete` | Save recipe | False | All |
 
 
 ### Recipe
 
-| Method | URL | Description |
-|--------|-----|-------------|
-| `GET` | `/recipe/VerRecetas` | All Recipe |
-| `GET` | `/recipe/VerRecetas/details` | See recipe deatails |
-| `GET` |	`/recipe/edit` | Edit recipe | 
-| `POST`| `/recipe/edit` | Edit recipe |
-| `GET` | `/recipe/create`| Create recipe |
-| `POST`| `/recipe/create`| Create recipe |
-| `POST`| `/recipe/delete`| Delete recipe | 
-| `GET`| `/recipe/listRecipeShe`| Search recipe | 
-| `GET`| `/recipe/:id/like`| Like recipe | 
+| Method | URL | Description | Protected | Roles |
+|--------|-----|-------------|-----------|-------| 
+| `GET` | `/recipe/:id/details` | Details Recipe | True | All / Admin |
+| `POST`| `/recipe/:id/details` | Create Comment | True |
+| `GET` | `/recipe/create` | Find ingredients | False | All |
+| `POST`|	`/recipe/create` | Create recipe | 
+| `GET`| `/recipe/listRecipe` | All recipe |  True | All / Admin |
+| `GET` | `/recipe/listRecipeShe`| Search recipe |  True | All |
+| `GET`| `/recipe/:id/edit`| Edit recipe | False | All |
+| `POST`| `/recipe/:id/edit`| Edit recipe | False | All |
+| `POST`| `/recipe/:id/delete`| Delete recipe | False | All |
+| `POST`| `/recipe/:id/delete`| Delete recipe | False | All |
+| `GET`| `/recipe/:id/like`| Like recipe | False | All |
 
 
 ### Ingredient
 
-| Method | URL | Description |
-|--------|-----|-------------|
-| `GET` | `/ingredient/create` | Create ingredient |
-| `POST`| `/ingredient/create` | Create ingredient |
-| `GET` | `/ingredient/list` | All ingredient |
-| `GET` |	`/ingredient/:id/edit` | Edit ingredient |
-| `POST` |	`/ingredient/:id/edit` | Edit ingredient |
-| `POST`| `/ingredient/:id/delete` | Delete ingredient |
+| Method | URL | Description | Protected | Roles |
+|--------|-----|-------------|-----------|-------|
+| `GET` | `/ingredient/create` | Create ingredient | False | All |
+| `POST`| `/ingredient/create` | Create ingredient | False | All |
+| `GET` | `/ingredient/list` | All ingredient | False | All |
+| `GET` |	`/ingredient/:id/edit` | Edit ingredient | False | All |
+| `POST` |	`/ingredient/:id/edit` | Edit ingredient | False | All |
+| `POST`| `/ingredient/:id/delete` | Delete ingredient | False | All |
 
 ## Comment
 
-| Method | URL | Description |
-|--------|-----|-------------|
-| `GET` | `/comment/:id/edit` | Edit comment |
-| `POST`| `/comment/:id/edit` | Edit comment |
-| `POST` | `/comment/:id/delete` | Delete comment |
-| `GET` |	`/ingredient/:id/edit` | Edit ingredient |
-| `POST` |	`/ingredient/:id/edit` | Edit ingredient |
-| `POST`| `/ingredient/:id/delete` | Delete ingredient |
+| Method | URL | Description | Protected | Roles |
+|--------|-----|-------------|-----------|-------|
+| `GET` | `/comment/:id/edit` | Edit comment | False | All |
+| `POST`| `/comment/:id/edit` | Edit comment | False | All |
+| `POST` | `/comment/:id/delete` | Delete comment | False | Admin | 
+
 
 
 

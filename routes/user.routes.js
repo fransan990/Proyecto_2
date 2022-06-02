@@ -13,8 +13,7 @@ router.get('/registro', (req, res, next) => {
 })
 
 router.post('/registro', (req, res, next) => {
-    // res.send("funciona")
-    // const { password } = req.body
+
     const { username, password, email, telephone } = req.body
 
     bcrypt
@@ -26,8 +25,8 @@ router.post('/registro', (req, res, next) => {
 })
 
 router.get('/inicio-sesion', isLoggedOut, (req, res) => {
+
     res.render('user/login')
-    // res.send("login")
 })
 
 router.get('/user/about', isLoggedOut, (req, res) => {
@@ -70,13 +69,10 @@ router.post('/cerrar-sesion', (req, res, next) => {
     req.session.destroy(() => res.redirect('/user/inicio-sesion'))
 })
 
-
 //listar recetas propias
-
 router.get('/listaReceta', isLoggedIn, (req, res, next) => {
 
     const { _id } = req.session.currentUser
-    // const isMine = req.session.currentUser._id === id
     const promises = [Recipe.find({ owner: _id }), User.findById(_id).populate("favRecipes")]
 
     Promise
@@ -91,12 +87,8 @@ router.get('/listaReceta', isLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
-
-
 //receta guardada
-
 router.post('/:id/recipeFav', (req, res, next) => {
-    // res.send("hola")
 
     const { id } = req.params
     const { _id } = req.session.currentUser
@@ -111,7 +103,6 @@ router.post('/:id/recipeFav', (req, res, next) => {
 
 //Eliminar Receta fav
 router.post('/:id/recipeFav/delete', (req, res, next) => {
-    // res.send("eliminar")
 
     const { id } = req.params
     const { _id } = req.session.currentUser
@@ -125,7 +116,6 @@ router.post('/:id/recipeFav/delete', (req, res, next) => {
 })
 
 //About
-
 router.get('/about', (req, res) => {
     res.render("about")
 })

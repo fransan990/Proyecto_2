@@ -1,12 +1,13 @@
 const router = require("express").Router()
 const Ingredient = require('../models/Ingredient.model')
 
-//Create
+//Crear
 router.get('/create', (req, res) => {
     res.render('ingredient/createIngredient')
 })
 
 router.post('/create', (req, res) => {
+
     const { name, kcal, protein, fat, carbs } = req.body
 
     Ingredient
@@ -19,7 +20,7 @@ router.post('/create', (req, res) => {
         })
 })
 
-//list 
+//Lista 
 router.get('/list', (req, res) => {
 
     Ingredient
@@ -31,8 +32,9 @@ router.get('/list', (req, res) => {
 })
 
 
-//edit
+//Editar
 router.get('/:id/edit', (req, res) => {
+
     const { id } = req.params
 
     Ingredient
@@ -44,6 +46,7 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.post('/:id/edit', (req, res) => {
+
     const { id } = req.params
     const { name, kcal, protein, fat, carbs } = req.body
 
@@ -55,8 +58,9 @@ router.post('/:id/edit', (req, res) => {
         .catch(err => console.log(err))
 })
 
-//Delete
+//Eliminar
 router.post('/:id/delete', (req, res) => {
+
     const { id } = req.params
 
     Ingredient
@@ -66,6 +70,5 @@ router.post('/:id/delete', (req, res) => {
         })
         .catch(err => console.log(err))
 })
-
 
 module.exports = router
