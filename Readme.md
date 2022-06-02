@@ -42,7 +42,7 @@
 
 | Method | URL | Description |
 |--------|-----|-------------|
-| `GET` | `/user/registro` | Signup |
+| `GET` | `/user/registro` | Signup|
 | `POST`| `/user/registro` | Signup |
 | `GET` | `/user/inicio-sesion` | Login |
 | `POST`| `/user/inicio-sesion` | Login |
