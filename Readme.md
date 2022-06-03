@@ -82,7 +82,7 @@
 | `POST` |	`/ingredient/:id/edit` | Edit ingredient | False | All |
 | `POST`| `/ingredient/:id/delete` | Delete ingredient | False | All |
 
-## Comment
+### Comment
 
 | Method | URL | Description | Protected | Roles |
 |--------|-----|-------------|-----------|-------|
