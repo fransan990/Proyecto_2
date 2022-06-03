@@ -8,11 +8,11 @@ const Recipe = require('../models/Recipe.model')
 const { isLoggedOut, isLoggedIn } = require('./../middleware/route-guard')
 
 
-router.get('/registro', (req, res, next) => {
+router.get('/signup', (req, res, next) => {
     res.render('user/signup')
 })
 
-router.post('/registro', (req, res, next) => {
+router.post('/signup', (req, res, next) => {
 
     const { username, password, email, telephone } = req.body
 
@@ -24,17 +24,12 @@ router.post('/registro', (req, res, next) => {
         .catch(error => next(error))
 })
 
-router.get('/inicio-sesion', isLoggedOut, (req, res) => {
+router.get('/login', isLoggedOut, (req, res) => {
 
     res.render('user/login')
 })
 
-router.get('/user/about', isLoggedOut, (req, res) => {
-    res.render('about')
-
-})
-
-router.post('/inicio-sesion', isLoggedOut, (req, res, next) => {
+router.post('/login', isLoggedOut, (req, res, next) => {
 
     const { username, password } = req.body
 
@@ -64,13 +59,18 @@ router.post('/inicio-sesion', isLoggedOut, (req, res, next) => {
         .catch(error => next(error));
 })
 
-router.post('/cerrar-sesion', (req, res, next) => {
+router.post('/loggedOut', (req, res, next) => {
     req.app.locals.isLogged = false
-    req.session.destroy(() => res.redirect('/user/inicio-sesion'))
+    req.session.destroy(() => res.redirect('/user/login'))
+})
+
+//About
+router.get('/about', (req, res) => {
+    res.render("about")
 })
 
 //listar recetas propias
-router.get('/listaReceta', isLoggedIn, (req, res, next) => {
+router.get('/listRecipeOwn', isLoggedIn, (req, res, next) => {
 
     const { _id } = req.session.currentUser
     const promises = [Recipe.find({ owner: _id }), User.findById(_id).populate("favRecipes")]
@@ -96,7 +96,7 @@ router.post('/:id/recipeFav', (req, res, next) => {
     User
         .findByIdAndUpdate(_id, { $push: { favRecipes: id } })
         .then(() => {
-            res.redirect("/user/listaReceta")
+            res.redirect("/user/listRecipeOwn")
         })
         .catch(error => next(error))
 })
@@ -110,14 +110,9 @@ router.post('/:id/recipeFav/delete', (req, res, next) => {
     User
         .findByIdAndUpdate(_id, { $pull: { favRecipes: id } })
         .then(() => {
-            res.redirect("/user/listaReceta")
+            res.redirect("/user/listRecipeOwn")
         })
         .catch(error => next(error))
-})
-
-//About
-router.get('/about', (req, res) => {
-    res.render("about")
 })
 
 module.exports = router;

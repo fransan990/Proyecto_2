@@ -41,22 +41,19 @@
                      Login
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <li><a class="dropdown-item" href="/user/registro">Register</a></li>
-                     <li><a class="dropdown-item" href="/user/inicio-sesion">Sign in</a></li>
+                     <li><a class="dropdown-item" href="/user/signup">Register</a></li>
+                     <li><a class="dropdown-item" href="/user/login">Sign in</a></li>
                      <hr>
 
                      {{#if isLogged}}
 
-                     <li><a class="dropdown-item" href="/user/listaReceta">List Recipe</a></li>
+                     <li><a class="dropdown-item" href="/user/listRecipeOwn">List Recipe</a></li>
                      <li><a class="dropdown-item" href="/recipe/create">Create Recipe</a></li>
-
-
-
                      <li>
                         <hr class="dropdown-divider">
                      </li>
                      <li class="nav-item">
-                        <form action="/user/cerrar-sesion" method="POST">
+                        <form action="/user/loggedOut" method="POST">
                            <button class="dropdown-item">Cerrar Sesion</button>
                         </form>
                      </li>

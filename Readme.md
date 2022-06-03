@@ -44,12 +44,12 @@
 
 | Method | URL | Description | Protected | Roles |
 |--------|-----|-------------|-----------|-------|
-| `GET` | `/user/registro` | Signup | False | All | 
-| `POST`| `/user/registro` | Signup | False | All | 
-| `GET` | `/user/inicio-sesion` | Login | False | All | 
-| `POST`| `/user/inicio-sesion` | Login | False | All | 
+| `GET` | `/user/signup` | Signup | False | All | 
+| `POST`| `/user/signup` | Signup | False | All | 
+| `GET` | `/user/login` | Login | False | All | 
+| `POST`| `/user/login` | Login | False | All | 
 | `GET` | `/user/about` | About | False | All |
-| `GET` | `/user/listaReceta` | All recipe own | True | All |
+| `GET` | `/user/listRecipeOwn` | All recipe own | True | All |
 | `POST` | `/user/:id/recipeFav` | Save recipe | True | All |
 | `POST` | `/user/:id/recipeFav/delete` | Save recipe | False | All |
 
