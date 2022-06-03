@@ -59,9 +59,9 @@
 | Method | URL | Description | Protected | Roles |
 |--------|-----|-------------|-----------|-------| 
 | `GET` | `/recipe/:id/details` | Details Recipe | True | All / Admin |
-| `POST`| `/recipe/:id/details` | Create Comment | True |
+| `POST`| `/recipe/:id/details` | Create Comment | True | All |
 | `GET` | `/recipe/create` | Find ingredients | False | All |
-| `POST`|	`/recipe/create` | Create recipe | 
+| `POST`|	`/recipe/create` | Create recipe | False | All |
 | `GET`| `/recipe/listRecipe` | All recipe |  True | All / Admin |
 | `GET` | `/recipe/listRecipeShe`| Search recipe |  True | All |
 | `GET`| `/recipe/:id/edit`| Edit recipe | False | All |
