@@ -9,7 +9,7 @@ const { isLoggedOut, isLoggedIn } = require('./../middleware/route-guard')
 
 
 router.get('/signup', (req, res, next) => {
-    res.render('user/signup')
+    res.render('auth/signup')
 })
 
 router.post('/signup', (req, res, next) => {
@@ -26,7 +26,7 @@ router.post('/signup', (req, res, next) => {
 
 router.get('/login', isLoggedOut, (req, res) => {
 
-    res.render('user/login')
+    res.render('auth/login')
 
 
 })
@@ -36,7 +36,7 @@ router.post('/login', isLoggedOut, (req, res, next) => {
     const { username, password } = req.body
 
     if (username.length === 0 || password.length === 0) {
-        res.render('user/login', { errorMessage: 'Rellena todos los campos' })
+        res.render('auth/login', { errorMessage: 'Rellena todos los campos' })
         return
     }
 
@@ -44,12 +44,12 @@ router.post('/login', isLoggedOut, (req, res, next) => {
         .findOne({ username })
         .then(user => {
             if (!user) {
-                res.render('user/login', { errorMessage: 'Usuario no reconocido' })
+                res.render('auth/login', { errorMessage: 'Usuario no reconocido' })
                 return
             }
 
             if (!bcrypt.compareSync(password, user.password)) {
-                res.render('user/login', { errorMessage: 'Contraseña no válida' })
+                res.render('auth/login', { errorMessage: 'Contraseña no válida' })
                 return
             }
 
@@ -63,7 +63,7 @@ router.post('/login', isLoggedOut, (req, res, next) => {
 
 router.post('/loggedOut', (req, res, next) => {
     req.app.locals.isLogged = false
-    req.session.destroy(() => res.redirect('/user/login'))
+    req.session.destroy(() => res.redirect('/auth/login'))
 })
 
 //About
@@ -84,7 +84,7 @@ router.get('/listRecipeOwn', isLoggedIn, (req, res, next) => {
             console.log(recipes)
             console.log(user)
 
-            res.render('user/ownlistRecipe', { recipes, user })
+            res.render('auth/ownlistRecipe', { recipes, user })
         })
         .catch(error => next(error))
 })
