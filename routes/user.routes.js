@@ -26,7 +26,9 @@ router.post('/signup', (req, res, next) => {
 
 router.get('/login', isLoggedOut, (req, res) => {
 
-    res.render('user/login')
+    // res.render('user/login')
+    res.send("hola")
+    console.log("hola")
 })
 
 router.post('/login', isLoggedOut, (req, res, next) => {
