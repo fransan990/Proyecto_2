@@ -4,16 +4,16 @@
 
 ## TEST OUR WEB
 
-<span>Heroku:<a href="https://recipe-sf.herokuapp.com/" target="_blank" rel="noreferrer"> 
+<p>Heroku</p>
+<a href="https://recipe-sf.herokuapp.com/" target="_blank" rel="noreferrer"> 
  <p>recipe-sf</p>
 </a>
-</span>
 
-
-<span>Glitch:<a href="https://re-fs.glitch.me" target="_blank" rel="noreferrer"> 
+<p>Glitch</p>
+<a href="https://re-fs.glitch.me" target="_blank" rel="noreferrer"> 
  <p>recipe-sf</p>
 </a>
-</span>
+
  <p>Username: isaac</p>
  <p>Password: 1234</p>
    
