@@ -4,13 +4,13 @@
 
 ## TEST OUR WEB
 
-<p>Heroku: <a href="https://recipe-sf.herokuapp.com/" target="_blank" rel="noreferrer"> 
+<p>Heroku:<a href="https://recipe-sf.herokuapp.com/" target="_blank" rel="noreferrer"> 
  <p>recipe-sf</p>
 </a>
 </p>
 
 
-<p>Glitch: <a href="https://re-fs.glitch.me" target="_blank" rel="noreferrer"> 
+<p>Glitch:<a href="https://re-fs.glitch.me" target="_blank" rel="noreferrer"> 
  <p>recipe-sf</p>
 </a>
 </p>
