@@ -2,6 +2,17 @@
 
 <img  src="https://github.com/fransan990/Proyecto_2/blob/main/public/images/portada.png" alt="Portada" style="max-width: 100%;"/>
 
+## TEST OUR WEB
+
+<a href="https://recipe-sf.herokuapp.com/" target="_blank" rel="noreferrer"> 
+ <p>recipe-sf</p>
+</a>
+ <p>Username: isaac</p>
+ <p>Password: 1234</p>
+   
+
+
+
 ## ABOUT
 
 <p> Web application where users can view recipes created by themselves and search for any other recipe they are interested in and can edit and delete their own recipes while they can also save the recipes they like the most in their profiles and in the Google Places API, where they can find the name and location of the restaurants where these recipes are located.</p>
